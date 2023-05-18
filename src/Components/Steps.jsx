@@ -6,7 +6,7 @@ import { Bounce } from "react-awesome-reveal";
 
 const Steps = () => {
   return (
-    <div className="bg-[#f9f3eb] h-[200vh] md:h-[150vh]">
+    <div className="bg-[#f9f3eb] ">
       <div className="md:px-[7rem] px-[1rem] py-[5rem] ">
         <h1 className="md:text-[2.6rem]  text-3xl font-bold text-[#151515]">
           How to earn with Crypto

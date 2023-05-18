@@ -5,8 +5,8 @@ import earn from "../images/green-custom-bg@2x.a83366619412aab1d914-scaled.webp"
 
 const Earn = () => {
   return (
-    <div className=" background xl:h-[100vh]">
-      <div className="md:flex md:px-[2rem] lg:px-[6rem] ">
+    <div className=" background ">
+      <div className="md:flex md:px-[2rem] px-[1rem] lg:px-[6rem] ">
         <div className="md:w-1/2 py-[9rem] space-y-9 xl:pr-[3rem]">
           <h1 className="text-white text-4xl md:text-6xl font-sans font-semibold md:leading-[80px]">
             Earn on your crypto & Stablecoins every{" "}

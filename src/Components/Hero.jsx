@@ -84,7 +84,7 @@ const Hero = () => {
     //     </div>
     //   </div>
     // </div>
-    <div className="bg-[#f9f3eb] lg:h-[110vh] sm:h-[80vh] md:h-[120vh] xl:h-[120vh]">
+    <div className="bg-[#f9f3eb] pb-[5rem] border border-red-600">
       <div className="md:px-[2rem] lg:px-[7rem] px-4  py-[5rem] md:flex ">
         <div className="md:w-1/2 lg:pr-[4rem] md:pr-[4rem] space-y-5">
           <h1 className="  font-semibold lg:text-6xl text-3xl md:text-6xl lg:leading-[5rem] md:leading-[5rem]">
