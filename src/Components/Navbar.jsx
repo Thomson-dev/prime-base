@@ -10,7 +10,7 @@ const Navbar = () => {
           <div className="flex gap-x-4 items-center">
             <img src={primebase} className="w-[14%]" alt="" />
             <ul className="flex gap-6 clear-left font-semibold text-xl text-white">
-              <li>Products</li>
+              <li><a href="#/" className="">Product</a></li>
               <li> Prime Blog</li>
             </ul>
           </div>
