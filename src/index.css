@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.background{
+    background: url('./images/green-custom-bg.jpg');
+    background-size: cover;
+    background-position: left left;
+    width: 100%;
+    height: 70vh;
+}
