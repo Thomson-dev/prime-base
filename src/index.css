@@ -8,5 +8,32 @@
     background-size: cover;
     background-position: left left;
     width: 100%;
-    height: 70vh;
+    height: 100vh;
+}
+.font100{
+    font-weight: 300;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .background{
+        background: url('./images/green-custom-bg.jpg');
+        background-size: cover;
+        background-position: left left;
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .background{
+    background: url('./images/green-custom-bg.jpg');
+    background-size: cover;
+    background-position: left center;
+    width: 100%;
+    height: 50vh;
+}
+
 }
