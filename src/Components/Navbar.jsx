@@ -49,18 +49,18 @@ const Navbar = () => {
       <div className="flex md:hidden  justify-between items-center space-x-2 w-full ">
         <div
           onClick={() => setOpen(!open)}
-          className=" text-white  md:hidden  text-4xl cursor-pointer "
+          className=" text-white  w-[15%]  md:hidden  text-4xl cursor-pointer "
         >
           {open ? <HiX /> : <HiMenuAlt3 />}
         </div>
 
-        <div className=" flex items-center  justify-center">
-          <img src={primebase} className="w-[50%]" alt="" />
+        <div className=" flex items-center w-[30%]  justify-center">
+          <img src={primebase} className="" alt="" />
         </div>
 
 
-        <div className=" flex  items-center w-[100%] justify-center ">
-          <a href="/#" className="py-2  px-3 rounded-lg font-semibold  bg-white">Sign up</a>
+        <div className=" flex items-center w-[30%] justify-center ">
+          <a href="/#" className="py-2  px-4 rounded-lg font-semibold  bg-white">Sign up</a>
         </div>
       </div>
     </nav>
