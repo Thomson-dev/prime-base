@@ -84,20 +84,20 @@ const Hero = () => {
     //     </div>
     //   </div>
     // </div>
-    <div className="bg-[#f9f3eb] h-[90vh]">
-      <div className="md:px-[7rem] px-5 py-[5rem] md:flex ">
-        <div className="md:w-1/2 md:pr-[5rem] space-y-5">
-          <h1 className="  font-semibold text-6xl leading-[80px]">
+    <div className="bg-[#f9f3eb] pb-[5rem] ">
+      <div className="md:px-[2rem] lg:px-[7rem] px-4  py-[5rem] md:flex ">
+        <div className="md:w-1/2 lg:pr-[4rem] md:pr-[4rem] space-y-5">
+          <h1 className="  font-semibold lg:text-6xl text-3xl md:text-6xl lg:leading-[5rem] md:leading-[5rem]">
             Rent us your Crypto, earn up to{" "}
             <span className="text-green-600">15% interest</span>
           </h1>
 
-          <p className="text-gray-600 font-sans text-2xl leading-10 ">
+          <p className="text-gray-600 font-sans text-xl md:text-2xl leading-[37px] ">
             Earn in Crypto or Stablecoins up to 15% per month, and withdraw your
             earnings as often as every 24 hours.
           </p>
 
-          <button className="bg-green-600 text-white rounded-md px-16 text-xl font-semibold py-3">
+          <button className="bg-[#0c8444] hover:bg-green-600 text-white rounded-md px-16 text-xl font-semibold py-3">
             Start Renting
           </button>
         </div>
@@ -107,10 +107,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className=" mt-20">
+      <div className=" ">
         <Marquee
           gradient={false}
-          speed={80}
+          speed={100}
           pauseOnHover={true}
           pauseOnClick={true}
           delay={0}
@@ -118,28 +118,28 @@ const Hero = () => {
           direction="left"
         >
           <div className="mx-10">
-            <img src={img1} className="w-[100%]" alt="" />
+            <img src={img1} className="md:w-[100%] w-[100%]" alt="" />
           </div>
 
           <div className="mx-10">
-            <img src={img2} className="w-[100%]" alt="" />
+            <img src={img2} className="md:w-[100%]  w-[100%]" alt="" />
           </div>
 
           <div className="mx-10">
-            <img src={img3} className="w-[100%]" alt="" />
+            <img src={img3} className="md:w-[100%] w-[100%]" alt="" />
           </div>
 
           <div className="mx-10">
-            <img src={img4} className="w-[100%]" alt="" />
+            <img src={img4} className="md:w-[100%] w-[100%]" alt="" />
           </div>
           <div className="mx-10">
-            <img src={img1} className="w-[100%]" alt="" />
+            <img src={img1} className="md:w-[100%] w-[100%]" alt="" />
           </div>
           <div className="mx-10">
-            <img src={img2} className="w-[100%]" alt="" />
+            <img src={img2} className="md:w-[100%] w-[100%]" alt="" />
           </div>
           <div className="mx-10">
-            <img src={img3} className="w-[100%]" alt="" />
+            <img src={img3} className="md:w-[100%] w-[100%]" alt="" />
           </div>
         </Marquee>
       </div>
