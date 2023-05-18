@@ -17,7 +17,7 @@ const Steps = () => {
         </p>
 
         <div className="md:flex flex-col justify-center items-center py-[3rem] space-y-5">
-          <Bounce triggerOnce>
+          
             <div className="flex space-x-12 flex-col md:flex-row items-center">
               <img src={calendar} alt="" />
               <div className="">
@@ -30,9 +30,8 @@ const Steps = () => {
                 </p>
               </div>
             </div>
-          </Bounce>
+          
 
-          <Bounce triggerOnce>
             <div className="md:flex space-x-12 m:flex-col md:flex-row items-center">
               <img src={percentage} alt="" />
               <div className="">
@@ -45,9 +44,9 @@ const Steps = () => {
                 </p>
               </div>
             </div>
-          </Bounce>
+         
 
-          <Bounce triggerOnce>
+          
             <div className="flex space-x-12 flex-col md:flex-row items-center">
               <img src={time} alt="" />
               <div className="">
@@ -60,7 +59,7 @@ const Steps = () => {
                 </p>
               </div>
             </div>
-          </Bounce>
+          
         </div>
       </div>
     </div>

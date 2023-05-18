@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex md:hidden justify-between items-center space-x-10 w-full ">
+      <div className="flex md:hidden  justify-between items-center space-x-2 w-full ">
         <div
           onClick={() => setOpen(!open)}
           className=" text-white  md:hidden  text-4xl cursor-pointer "
@@ -59,8 +59,8 @@ const Navbar = () => {
         </div>
 
 
-        <div className="w-[100%] flex  items-center justify-center ">
-          <a href="/#" className="py-2 px-6 rounded-3xl font-semibold  bg-white">Sign up</a>
+        <div className=" flex  items-center w-[100%] justify-center ">
+          <a href="/#" className="py-2  px-3 rounded-lg font-semibold  bg-white">Sign up</a>
         </div>
       </div>
     </nav>

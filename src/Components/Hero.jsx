@@ -92,6 +92,8 @@ const Hero = () => {
             <span className="text-green-600">15% interest</span>
           </h1>
 
+          <h1 className="text-red-500 sm:text-green-500 md:text-black ">Testing</h1>
+
           <p className="text-gray-600 font-sans text-xl md:text-2xl leading-[37px] ">
             Earn in Crypto or Stablecoins up to 15% per month, and withdraw your
             earnings as often as every 24 hours.
