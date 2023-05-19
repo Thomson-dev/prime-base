@@ -4,6 +4,7 @@ import icon2 from "../images/icon2.svg";
 import { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { HiX } from "react-icons/hi";
+import {GiHamburgerMenu} from 'react-icons/gi'
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -49,18 +50,18 @@ const Navbar = () => {
       <div className="flex md:hidden  justify-between items-center space-x-2 w-full ">
         <div
           onClick={() => setOpen(!open)}
-          className=" text-white  w-[15%]  md:hidden  text-4xl cursor-pointer "
+          className=" text-white  w-[15%]  md:hidden  text-3xl cursor-pointer "
         >
-          {open ? <HiX /> : <HiMenuAlt3 />}
+          {open ? <HiX /> : <GiHamburgerMenu/>}
         </div>
 
         <div className=" flex items-center w-[30%]  justify-center">
-          <img src={primebase} className="" alt="" />
+          <img src={primebase}  className="w-[100%] sm:w-[70%]" alt="" />
         </div>
 
 
-        <div className=" flex items-center w-[30%] justify-center ">
-          <a href="/#" className="py-2  px-4 rounded-lg font-semibold  bg-white">Sign up</a>
+        <div className=" flex items-center w-[35%]  justify-center ">
+          <a href="/#" className="py-2  px-6 rounded-2xl font-semibold  bg-white">Sign up</a>
         </div>
       </div>
     </nav>

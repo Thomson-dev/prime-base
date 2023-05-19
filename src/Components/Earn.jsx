@@ -6,9 +6,13 @@ import earn from "../images/green-custom-bg@2x.a83366619412aab1d914-scaled.webp"
 const Earn = () => {
   return (
     <div className=" background ">
-      <div className="md:flex md:px-[2rem] px-[1rem] lg:px-[6rem] ">
-        <div className="md:w-1/2 py-[9rem] space-y-9 xl:pr-[3rem]">
-          <h1 className="text-white text-4xl md:text-6xl font-sans font-semibold md:leading-[80px]">
+      <div className="md:flex lg:px-[4rem] md:px-[2rem] px-[1rem] ">
+        <div className="md:w-1/2 md:py-[4rem] sm:py-[3rem] py-[3rem] space-y-5 font-semibold lg:py-[6rem] sm:space-y-5  md:space-y-4 lg:space-y-8 ">
+      
+          <h1
+            className="text-white text-2xl sm:text-5xl sm:max-w-md lg:max-w-xl md:text-5xl lg:text-6xl font-sans
+           font-semibold sm:leading-[3.5rem] md:leading-[3.5rem] lg:leading-[4rem]"
+          >
             Earn on your crypto & Stablecoins every{" "}
             <span className="text-green-300">24 hours </span>{" "}
           </h1>
@@ -17,10 +21,7 @@ const Earn = () => {
             Start Renting
           </button>
         </div>
-        <div className="md:w-1/2   ">
-          
-          
-        </div>
+        <div className="md:w-1/2   "></div>
       </div>
     </div>
   );

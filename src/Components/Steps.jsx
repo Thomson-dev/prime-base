@@ -7,59 +7,56 @@ import { Bounce } from "react-awesome-reveal";
 const Steps = () => {
   return (
     <div className="bg-[#f9f3eb] ">
-      <div className="md:px-[7rem] px-[1rem] py-[5rem] ">
-        <h1 className="md:text-[2.6rem]  text-3xl font-bold text-[#151515]">
+      <div className="lg:px-[4rem] md:px-[2rem] px-[1rem] md:py-[5rem] py-2 ">
+        <h1 className=" md:text-[2.6rem]  text-[1.6rem] font-semibold text-[#151515]">
           How to earn with Crypto
         </h1>
 
-        <p className="text-[1.5rem] tracking-wide py-2 font-semibold text-[#7a7a8c]">
+        <p className="lg:text-[1.5rem] md:text-[1.4rem]  text-[1.2rem] tracking-wide md:py-2 py-1 font-semibold text-[#7a7a8c]">
           Earn monthly returns with one of our Crypto Renting programs
         </p>
-
-        <div className="md:flex flex-col justify-center items-center py-[3rem] space-y-5">
-          
-            <div className="flex space-x-12 flex-col md:flex-row items-center">
-              <img src={calendar} alt="" />
-              <div className="">
-                <h1 className="md:text-3xl text-3xl font-semibold font-sans">
-                  Open an account
-                </h1>
-                <p className="text-[20px] pt-2 font-sans font100 max-w-sm leading-8 tracking-wide text-[#7a7a8c]  ">
-                  Quick and easy, it only takes a minute to open a Prime Base
-                  account.
-                </p>
-              </div>
+        {/* <h1 className="text-red-500 sm:text-green-500 md:text-black lg:text-orange-600 ">
+          Testing
+        </h1> */}
+        <div className="md:flex flex-col justify-center   items-center py-[3rem] space-y-5">
+          <div className="flex md:space-x-12 space-x-4   flex-col md:flex-row items-center">
+            <img src={calendar} alt="" />
+            <div className="">
+              <h1 className="md:text-3xl sm:text-2xl text-xl font-semibold font-sans">
+                Open an account
+              </h1>
+              <p className="md:text-[20px] sm:text-[19px] text-[18px] md:pt-2 pt-1 font-sans font100 max-w-sm  md:leading-8 tracking-wide text-[#7a7a8c]  ">
+                Quick and easy, it only takes a minute to open a Prime Base
+                account.
+              </p>
             </div>
-          
+          </div>
 
-            <div className="md:flex space-x-12 m:flex-col md:flex-row items-center">
-              <img src={percentage} alt="" />
-              <div className="">
-                <h1 className="text-3xl font-semibold font-sans">
-                  Choose your renting program
-                </h1>
-                <p className="text-[19px] pt-2 font-sans font100 max-w-sm leading-8 tracking-wide text-[#7a7a8c]  ">
-                  Select the Crypto Renting program that best suits your goals
-                  and needs.
-                </p>
-              </div>
+          <div className="md:flex flex-col md:space-x-12 space-x-4  sm:pl-[10rem]  pl-1 md:pl-0   md:flex-row items-center">
+            <img src={percentage} alt="" />
+            <div className="">
+              <h1 className="md:text-3xl sm:text-2xl text-xl font-semibold font-sans">
+                Choose your renting program
+              </h1>
+              <p className="md:text-[19px] sm:text-[19px] text-[18px] md:pt-2 pt-1 font-sans font100 max-w-sm md:leading-8 tracking-wide text-[#7a7a8c]  ">
+                Select the Crypto Renting program that best suits your goals and
+                needs.
+              </p>
             </div>
-         
+          </div>
 
-          
-            <div className="flex space-x-12 flex-col md:flex-row items-center">
-              <img src={time} alt="" />
-              <div className="">
-                <h1 className="text-3xl font-semibold font-sans">
-                  Get paid every 24 hours
-                </h1>
-                <p className="text-[19px] pt-2 font-sans font100 max-w-sm leading-8 tracking-wide text-[#7a7a8c]  ">
-                  Get paid for renting your Cryptos to Prime Base and withdraw
-                  your gains as often as once every 24 hours.
-                </p>
-              </div>
+          <div className="flex  md:space-x-12 space-x-4 flex-col md:flex-row items-center">
+            <img src={time} alt="" />
+            <div className="">
+              <h1 className="md:text-3xl text-xl font-semibold font-sans">
+                Get paid every 24 hours
+              </h1>
+              <p className="md:text-[19px] sm:text-[19px] text-[18px] md:pt-2 pt-1 font-sans font100 max-w-sm leading-8 tracking-wide text-[#7a7a8c]  ">
+                Get paid for renting your Cryptos to Prime Base and withdraw
+                your gains as often as once every 24 hours.
+              </p>
             </div>
-          
+          </div>
         </div>
       </div>
     </div>
