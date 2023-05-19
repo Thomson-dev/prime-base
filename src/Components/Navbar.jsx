@@ -4,7 +4,7 @@ import icon2 from "../images/icon2.svg";
 import { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { HiX } from "react-icons/hi";
-import {GiHamburgerMenu} from 'react-icons/gi'
+import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -52,17 +52,29 @@ const Navbar = () => {
           onClick={() => setOpen(!open)}
           className=" text-white  w-[15%]  md:hidden  text-3xl cursor-pointer "
         >
-          {open ? <HiX /> : <GiHamburgerMenu/>}
+          {open ? <HiX /> : <GiHamburgerMenu />}
         </div>
 
         <div className=" flex items-center w-[30%]  justify-center">
-          <img src={primebase}  className="w-[100%] sm:w-[70%]" alt="" />
+          <img src={primebase} className="w-[100%] sm:w-[70%]" alt="" />
         </div>
-
 
         <div className=" flex items-center w-[35%]  justify-center ">
-          <a href="/#" className="py-2  px-6 rounded-2xl font-semibold  bg-white">Sign up</a>
+          <a
+            href="/#"
+            className="py-2  px-6 rounded-2xl font-semibold text-lg bg-white"
+          >
+            Sign up
+          </a>
         </div>
+
+        <ul className={`absolute md:hidden top-[8rem] px-7 space-y-3 text-lg font-normal left-[-0.5rem] z-10 text-white bg-[#1c2120]  py-4 w-full
+        ${open ? 'left-[-0.5rem] duration-300 ' : 'left-[-110%] duration-300'}
+        
+        `}>
+            <li>Products</li>
+            <li> Prime Blog</li>
+          </ul>
       </div>
     </nav>
   );
