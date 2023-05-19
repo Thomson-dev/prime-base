@@ -13,7 +13,7 @@ import "swiper/css/scrollbar";
 
 const Swipper = () => {
   return (
-    <div className="">
+    <div className="md:block  hidden">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
