@@ -4,6 +4,7 @@ import Hero from './Components/Hero'
 import Earn from './Components/Earn'
 import Steps from './Components/Steps'
 import Slider from './Components/Slider'
+import Faq from './Components/Faq'
 
 const App = () => {
   return (
@@ -13,6 +14,8 @@ const App = () => {
     <Earn/>
     <Steps/>
     <Slider/>
+    <Faq/>
+  
   </div>
   )
 }

@@ -27,7 +27,7 @@ const Navbar = () => {
     //   </div>
     // </nav>
 
-    <nav className="bg-[#1c2120] px-[1rem] md:px-[5rem] py-[1rem]">
+    <nav className="bg-[#1c2120] px-[1rem] md:px-[5rem] md:py-[1rem]">
       <div className="md:flex hidden w-full justify-between">
         <div className="flex gap-x-4 w-1/2  items-center">
           <img src={primebase} className="w-[20%]" alt="" />
@@ -68,7 +68,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        <ul className={`absolute md:hidden top-[8rem] px-7 space-y-3 text-lg font-normal left-[-0.5rem] z-10 text-white bg-[#1c2120]  py-4 w-full
+        <ul className={`absolute md:hidden top-[7rem] px-7 space-y-3 text-lg font-normal left-[-0.5rem] z-10 text-white bg-[#1c2120]  py-4 w-full
         ${open ? 'left-[-0.5rem] duration-300 ' : 'left-[-110%] duration-300'}
         
         `}>

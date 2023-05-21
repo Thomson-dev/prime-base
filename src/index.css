@@ -1,48 +1,90 @@
+/** @format */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.background {
+  background: url("./images/green-custom-bg.jpg");
+  background-size: cover;
+  background-position: left left;
+  width: 100%;
+  height: 60vh;
+}
 
-.background{
-    background: url('./images/green-custom-bg.jpg');
+.background2 {
+  background: url("./images/green-custom-bg@2x.a83366619412aab1d914-scaled.webp");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 90vh;
+}
+.font100 {
+  font-weight: 300;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.content.show {
+  height: auto;
+  max-height: 999px;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
+.swiper-button-next {
+  background: #fff;
+  height: 50px;
+  width: 50px !important;
+  border-radius: 50%;
+  display: none !important;
+  position: absolute;
+  right: -2rem !important;
+  z-index: 9999999999 !important ;
+
+  /* background-color: whitesmoke; */
+}
+.swiper-button-next:after {
+  color: black;
+  font-weight: bolder;
+  font-size: 15px !important;
+
+  border-radius: 50%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: black;
+  font-size: 15px !important;
+  display: none !important;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 1058px) {
+  .background {
+    background: url("./images/green-custom-bg.jpg");
     background-size: cover;
     background-position: left left;
     width: 100%;
-    height: 80vh;
-}
-
-
-.background2{
-    background: url('./images/green-custom-bg@2x.a83366619412aab1d914-scaled.webp');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
-}
-.font100{
-    font-weight: 300;
-}
-
-
-
-
-@media screen and (max-width: 1058px) {
-    .background{
-        background: url('./images/green-custom-bg.jpg');
-        background-size: cover;
-        background-position: left left;
-        width: 100%;
-        height: 60vh;
-    }
+    height: 60vh;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .background{
-    background: url('./images/green-custom-bg.jpg');
+  .background {
+    background: url("./images/green-custom-bg.jpg");
     background-size: cover;
     background-position: left left;
     width: 100%;
-    height: 30vh;
-}
-
+    height: fit-content;
+  }
+  .background2 {
+    background: url("./images/green-custom-bg@2x.a83366619412aab1d914-scaled.webp");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: fit-content;
+  }
 }
