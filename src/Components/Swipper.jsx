@@ -31,7 +31,9 @@ const Swipper = () => {
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <div className="max-w-[38rem]  flex md:flex-row flex-col bg-[#f9f3eb] px-4 md:px-7  md:space-x-5 items-center py-8 border border-gray-200 rounded-xl shadow-xl">
+          <div className="max-w-[43rem] cursor-grab  flex md:flex-row flex-col 
+          bg-[#f9f3eb] px-4 md:px-7  md:space-x-5 space-y-5 md:space-y-0 items-center
+           py-8 border border-gray-200 rounded-xl shadow-xl">
             <img src={Bitcoin} alt="" className="w-[25%]" />
             <div className="">
               <div className="">
@@ -54,7 +56,8 @@ const Swipper = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="max-w-[38rem] flex bg-[#f9f3eb] px-7  space-x-5 items-center py-8 border border-gray-200 rounded-xl shadow-xl">
+          <div className="max-w-[38rem] flex md:flex-row flex-col bg-[#f9f3eb] px-7 cursor-grab md:space-x-5 
+          items-center space-y-5 md:space-y-0 py-8 border border-gray-200 rounded-xl shadow-xl">
             <img src={Tether} alt="" className="w-[25%]" />
             <div className="">
               <div className="">
@@ -77,7 +80,7 @@ const Swipper = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="max-w-[38rem] flex bg-[#f9f3eb] px-7  space-x-5 items-center py-8 border border-gray-200 rounded-xl shadow-xl">
+        <div className="max-w-[38rem] flex bg-[#f9f3eb] px-7 md:flex-row flex-col  cursor-grab md:space-x-5 space-y-5 md:space-y-0 items-center py-8 border border-gray-200 rounded-xl shadow-xl">
             <img src={Tether} alt="" className="w-[25%]" />
             <div className="">
               <div className="">
@@ -100,7 +103,7 @@ const Swipper = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="max-w-[38rem] flex bg-[#f9f3eb] px-7  space-x-5 items-center py-8 border border-gray-200 rounded-xl shadow-xl">
+        <div className="max-w-[38rem] flex bg-[#f9f3eb] px-7 md:flex-row flex-col  cursor-grab md:space-x-5  space-y-5 md:space-y-0 items-center py-8 border border-gray-200 rounded-xl shadow-xl">
             <img src={Tether} alt="" className="w-[25%]" />
             <div className="">
               <div className="space-y-">

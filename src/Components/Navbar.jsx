@@ -27,7 +27,7 @@ const Navbar = () => {
     //   </div>
     // </nav>
 
-    <nav className="bg-[#1c2120] px-[1rem] md:px-[5rem] md:py-[1rem]">
+    <nav className="bg-[#1c2120] px-[1rem] md:px-[3rem] md:py-[1rem]">
       <div className="md:flex hidden w-full justify-between">
         <div className="flex gap-x-4 w-1/2  items-center">
           <img src={primebase} className="w-[20%]" alt="" />

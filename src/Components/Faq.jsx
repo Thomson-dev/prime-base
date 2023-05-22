@@ -2,24 +2,33 @@
 
 import React from "react";
 import Accordion from "./Accordion";
+import faq from "../images/faq.webp";
 
 const Faq = () => {
   return (
     <div className="bg-[#f9f3eb]">
-      <div className="lg:px-[4rem] md:px-[2rem] px-[1rem] py-[4rem] md:flex">
-        <div className="md:w-1/2 space-y-7">
-          <h1 className="text-4xl font-bold font-sans">FAQ</h1>
+      <div className="lg:px-[4rem] md:px-[2rem] px-[1rem] py-[6rem] md:flex">
+        <div className="md:w-[60%]">
+          <div className=" space-y-8">
+            <h1 className="text-4xl font-bold font-sans">FAQ</h1>
 
-          <p className="text-lg leading-7 font-normal">
-            Our mission is to bridge the gap between Crypto and cash. We do this
-            by providing instant crypto-backed financial services that you can
-            use any time, anywhere, at the click of a button.
-          </p>
+            <p className=" md:text-[19px] text-[17px] max-w-[39rem] font-semibold leading-7 tracking-normal">
+              Our mission is to bridge the gap between Crypto and cash. We do
+              this by providing instant crypto-backed financial services that
+              you can use any time, anywhere, at the click of a button.
+            </p>
 
-          <Accordion/>
+            <Accordion />
+          </div>
+          <h1 className="pt-20 text-xl font-semibold">
+            <span className="font-bold"> Trust is our product, </span> which
+            begins by building and maintaining a secure customer experience.
+          </h1>
         </div>
 
-       
+        <div className=" md:w-[40%] flex items-center">
+          <img src={faq} alt="" />
+        </div>
       </div>
     </div>
   );
