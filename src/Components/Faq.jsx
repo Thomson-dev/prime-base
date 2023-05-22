@@ -26,7 +26,7 @@ const Faq = () => {
           </h1>
         </div>
 
-        <div className=" md:w-[40%] flex items-center">
+        <div className=" md:w-[40%] hidden md:flex items-center">
           <img src={faq} alt="" />
         </div>
       </div>

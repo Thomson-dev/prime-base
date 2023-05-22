@@ -17,9 +17,9 @@ const Slider = () => {
               We have 4 renting programs
             </h1>
           </div>
-          <div className="md:w-[33%] w-[100%] sm:w-[50%] h-16 flex justify-center items-center bg-[#fefcf9] rounded-xl">
+          <div className="md:w-[50%] w-[100%] sm:w-[50%] lg:w-[40%] h-16 flex justify-center items-center bg-[#fefcf9] rounded-xl">
             <ul className="flex space-x-9 justify-center  items-center">
-            <li><button className="py-2 px-7 rounded-lg text-lg font-semibold bg-black text-white ">Show all</button></li>
+            <li><button className="py-2 md:px-7 lg:px-8 px-7 sm:px-1 rounded-lg text-lg font-semibold bg-black text-white ">Show all</button></li>
             <li><button className="text-lg font-semibold">Crypto</button></li>
             <li><button className="text-lg font-semibold">Stablecoins</button></li>
             </ul>

@@ -7,6 +7,7 @@ import img1 from "../images/logo-cointelegraph.f10eec32227a19039d0ba6c9d16115ce-
 import img2 from "../images/logo-daily-express.69803bbbb689a79f2e1370095ec034b9-1.png";
 import img3 from "../images/logo-forbes.531fe76f95a0227161f643934e4223aa-1-1.png";
 import img4 from "../images/logo-bloomberg.18b32aeabc29aeeceaf7805d654c2320-1.png";
+import Tab from "./Tab";
 
 const data = [
   {
@@ -102,7 +103,9 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="md:w-1/2"></div>
+        <div className="md:w-1/2">
+          <Tab/>
+        </div>
       </div>
 
       <div className="mt-[2rem] ">
