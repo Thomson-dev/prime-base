@@ -87,7 +87,7 @@ const Hero = () => {
     // </div>
     <div className="bg-[#f9f3eb] pb-[5rem] ">
       <div className="md:px-[2rem] lg:px-[4rem] px-4 md:py-[3rem] py-[1rem] md:flex ">
-        <div className="md:w-1/2  sm:pr-[2rem] md:pr-[4rem] space-y-5">
+        <div className="lg:w-1/2  sm:pr-[2rem] md:pr-[4rem] space-y-5">
           <h1 className="  font-semibold font-sans  text-3xl md:text-6xl lg:leading-[5rem] md:leading-[5rem]">
             Rent us your Crypto, earn up to{" "}
             <span className="text-green-600">15% interest</span>
@@ -103,7 +103,7 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="md:w-1/2">
+        <div className="lg:w-1/2 ">
           <Tab/>
         </div>
       </div>

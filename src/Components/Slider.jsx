@@ -7,9 +7,9 @@ const Slider = () => {
   return (
     <div className="background2">
       <div className=" px-[1rem] pb-8 sm:mx-[3rem] md:w-100 md:pb-[5rem]  md:px-[3rem] ">
-        {/* <h1 className="text-red-500 sm:text-green-500 md:text-black lg:text-orange-600 ">
+        <h1 className="text-red-500 sm:text-green-500 md:text-black lg:text-orange-600 ">
           Testing
-        </h1> */}
+        </h1>
 
         <div className="flex justify-center flex-col space-y-10 items-center py-[5rem]">
           <div className="">
