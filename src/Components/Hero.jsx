@@ -103,7 +103,7 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="lg:w-1/2 ">
+        <div className="lg:w-1/2 px-[2rem]">
           <Tab/>
         </div>
       </div>

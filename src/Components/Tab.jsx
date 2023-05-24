@@ -5,18 +5,21 @@ import Ethereum from "../images/Tether-1.png";
 import bankCar from "../images/bank-car.webp";
 import { Switch } from "antd";
 import bitcoin from "../images/1024px-Bitcoin.svg.png";
+import { IoMdArrowDropdown } from "react-icons/io";
 const Tab = () => {
   const [toggleState, setToggleState] = useState(1);
+
+  const [dropdownOpen, setdropdownOpen] = useState(false);
+
+  
+  const [dropdownOpen2, setdropdownOpen2] = useState(false);
+
 
   const toggleTab = (index) => {
     setToggleState(index);
   };
 
-  const [selectedOption, setSelectedOption] = useState("");
-
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
+ 
 
   const [rangeValue, setRangeValue] = useState(0);
 
@@ -33,14 +36,14 @@ const Tab = () => {
             toggleState === 1
               ? "py-3 px-4 bg-[#f5f1ec]  font-semibold text-xl shadow-sm  text-green-600   rounded-t-xl "
               : " py-5 px-6 text-xl"
-          }`} 
+          }`}
         >
           Stablecoins
         </button>
         <button
           onClick={() => toggleTab(2)}
           className={`${
-            toggleState ===2
+            toggleState === 2
               ? "py-5 px-6 bg-[#f5f1ec]  font-semibold text-xl shadow-sm   text-green-600   rounded-t-xl "
               : " py-5 px-7 text-xl"
           }`}
@@ -49,7 +52,7 @@ const Tab = () => {
         </button>
       </div>
       <div
-        className={`content1 max-w-[100%] border px-[2rem]  bg-[#fefcf9] space-y-6  py-5 rounded-lg shadow-xl h-[70vh] ${
+        className={`content1 max-w-[100%] border px-[2rem]  bg-[#fefcf9] space-y-6  py-5 rounded-lg shadow-xl h-[80vh] ${
           toggleState === 1 ? "block" : "hidden"
         }`}
       >
@@ -87,47 +90,123 @@ const Tab = () => {
           <Switch className=" bg-[#cccccc]" />
         </div>
 
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 relative">
           <div className="w-1/2 space-y-2">
             <p className="text-xs font-semibold ">CRYPTO RENT AMOUNT</p>
-            <div className="border   bg-[#f8f3eb]  rounded">
+            <div className="border flex w-full items-center py-[0.2rem] bg-[#f8f3eb]  rounded">
               <input
-                className=" w-[50%] py-3   bg-[#f8f3eb]  border-none outline-none"
+                className=" w-[50%] py-3 rounded-lg px-2 border bg-[#f8f3eb]  border-none outline-none"
                 type=""
               />
-              {/* <select value={selectedOption} className="outline-none  bg-[#f8f3eb] " onChange={handleOptionChange}>
-                <option value="option1">
-                  <div className="flex">
-                    <img src={usdcoin}  alt="" />
+              <button  onClick={() => setdropdownOpen(!dropdownOpen)} className="w-[50%] cursor-pointer space-x-2  flex items-center">
+                <img src={Tether} alt="" className="w-[15%]" />
+                <h1 className="font-semibold text-lg cursor-pointer">USDT</h1>
+                <IoMdArrowDropdown className="text-2xl" />
+              </button>
+            </div>
+
+            <div className={`absolute  h-40 rounded-md border border-green-500 z-20   bg-slate-50 w-72  ${
+                    dropdownOpen
+                      ? `top-full opacity-100 visible`
+                      : `top-[110%] invisible opacity-0`
+                  }`}>
+              <ul>
+                <li className="px-3 py-2">
+                  <div className="flex items-center px-5  hover:bg-slate-300 hover:rounded-md py-2 cursor-pointer space-x-5">
+                    <img src={usdcoin} className="w-[20%]" alt="" />
+                    <div className="">
+                      <h1 className="font-semibold text-lg">UsdCoin</h1>
+                      <h2 className="text-sm">USDC</h2>
+                    </div>
                   </div>
-                  USTD
-                  </option>
-                <option value="option2">Option2</option>
-              
-              </select> */}
+                </li>
+
+                <li className="px-3 py-1">
+                  <div className="flex items-center px-5 hover:bg-slate-300 hover:rounded-md py-2 cursor-pointer space-x-5">
+                    <img src={Tether} className="w-[20%]" alt="" />
+                    <div className="">
+                      <h1 className="font-semibold text-lg">Tether</h1>
+                      <h2 className="text-sm">USDC</h2> 
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
 
           <div className="w-1/2 space-y-2">
             <p className="text-xs font-semibold ">TERM</p>
-            <div className="border  flex justify-items-end flex-col  bg-[#f8f3eb]  rounded">
-              <h1 className="font-bold text-base"> {rangeValue} month(s)</h1>
+            <div className="border  flex justify-items-end flex-col py-[0.3rem] px-2 bg-[#f8f3eb]  rounded">
+              <h1 className="font-bold text-lg"> {rangeValue} month(s)</h1>
               <input
                 type="range"
                 min="0"
                 step="12"
                 max="36"
-                className="py-2 w-[100%] text-black"
+                className="h-[10%] text-black "
                 value={rangeValue}
                 onChange={handleRangeChange}
               />
             </div>
           </div>
         </div>
+
+        <div className="border py-3 border-slate-700 rounded-md">
+          <div className="flex justify-between items-center  px-4">
+            <div className="space-y-5 w-1/2">
+              <h1 className="font-semibold text-base">TOTAL EARNINGS</h1>
+              <div className="flex items-center space-x-2 w-[100%]">
+                <img src={Tether} alt="" className="w-[7%] " />
+                <h1 className="text-4xl font-bold">0</h1>
+              </div>
+            </div>
+
+            <div className=" w-1/2 relative">
+              <div className="w-[100% ] flex justify-end items-center space-x-2">
+              <button  onClick={() => setdropdownOpen2(!dropdownOpen2)} className="w-[50%] cursor-pointer  flex items-center">
+                <img src={Tether} alt="" className="w-[15%]" />
+                <div className=""></div>
+                <h1 className="font-semibold text-lg px-2 cursor-pointer">USDT</h1>
+                <IoMdArrowDropdown className="text-2xl" />
+              </button>
+              </div>
+
+
+              
+            <div className={`absolute top-10 h-40 rounded-md border border-green-500 z-20   bg-slate-50 w-72  ${
+                    dropdownOpen2
+                      ? `top-full opacity-100 visible`
+                      : `top-[110%] invisible opacity-0`
+                  }`}>
+              <ul>
+                <li className="px-3 py-2">
+                  <div className="flex items-center px-5  hover:bg-slate-300 hover:rounded-md py-2 cursor-pointer space-x-5">
+                    <img src={usdcoin} className="w-[20%]" alt="" />
+                    <div className="">
+                      <h1 className="font-semibold text-lg">UsdCoin</h1>
+                      <h2 className="text-sm">USDC</h2>
+                    </div>
+                  </div>
+                </li>
+
+                <li className="px-3 py-1">
+                  <div className="flex items-center px-5 hover:bg-slate-300 hover:rounded-md py-2 cursor-pointer space-x-5">
+                    <img src={Tether} className="w-[20%]" alt="" />
+                    <div className="">
+                      <h1 className="font-semibold text-lg">Tether</h1>
+                      <h2 className="text-sm">USDC</h2> 
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div
-        className={`content2 max-w-[100%] border px-[2rem]  bg-[#fefcf9] space-y-6  py-5 rounded-lg shadow-xl h-[70vh] ${
+        className={`content2 max-w-[100%] border px-[2rem]  bg-[#fefcf9] space-y-6  py-5 rounded-lg shadow-xl h-[80vh] ${
           toggleState === 2 ? "block" : "hidden"
         }`}
       >
@@ -168,36 +247,54 @@ const Tab = () => {
         <div className="flex space-x-4">
           <div className="w-1/2 space-y-2">
             <p className="text-xs font-semibold ">CRYPTO RENT AMOUNT</p>
-            <div className="border   bg-[#f8f3eb]  rounded">
+            <div className="border flex w-full items-center py-[0.2rem] bg-[#f8f3eb]  rounded">
               <input
-                className=" w-[50%] py-3   bg-[#f8f3eb]  border-none outline-none"
+                className=" w-[50%] py-3 rounded-lg px-2 border bg-[#f8f3eb]  border-none outline-none"
                 type=""
               />
-              {/* <select value={selectedOption} className="outline-none  bg-[#f8f3eb] " onChange={handleOptionChange}>
-                <option value="option1">
-                  <div className="flex">
-                    <img src={usdcoin}  alt="" />
-                  </div>
-                  USTD
-                  </option>
-                <option value="option2">Option2</option>
-              
-              </select> */}
+              <div className="w-[50%] cursor-pointer space-x-2 flex items-center">
+                <img src={Tether} alt="" className="w-[20%]" />
+                <h1 className="font-semibold text-xl cursor-pointer">USDT</h1>
+                <IoMdArrowDropdown className="text-xl" />
+              </div>
             </div>
           </div>
 
           <div className="w-1/2 space-y-2">
             <p className="text-xs font-semibold ">TERM</p>
-            <div className="border  flex justify-items-end flex-col  bg-[#f8f3eb]  rounded">
-              <p className="font-bold text-base"> {rangeValue} month(s)</p>
+            <div className="border  flex justify-items-end flex-col py-[0.3rem] px-2 bg-[#f8f3eb]  rounded">
+              <h1 className="font-bold text-lg"> {rangeValue} month(s)</h1>
               <input
                 type="range"
                 min="0"
-                max="100"
-                className="py-2 w-[100%] bg-black"
+                step="12"
+                max="36"
+                className="h-[10%] text-black "
                 value={rangeValue}
                 onChange={handleRangeChange}
               />
+            </div>
+          </div>
+        </div>
+
+        <div className="border py-5 border-black rounded">
+          <div className="flex justify-between items-center  px-4">
+            <div className="space-y-5 w-1/2">
+              <h1 className="font-semibold text-base">TOTAL EARNINGS</h1>
+              <div className="flex items-center space-x-2 w-[100%]">
+                <img src={Tether} alt="" className="w-[7%] " />
+                <h1 className="text-4xl font-bold">0</h1>
+              </div>
+            </div>
+
+            <div className=" w-1/2">
+              <div className="w-[100% ] flex justify-end items-center space-x-2">
+                <img src={Tether} className="w-[7%] h-5" alt="" />
+                <div className="flex items-center space-x-1">
+                  <h1 className="font-semibold text-xl cursor-pointer">USDT</h1>
+                  <IoMdArrowDropdown className="text-2xl" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
