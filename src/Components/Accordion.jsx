@@ -1,6 +1,10 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
+
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
+import { icons } from "react-icons";
 const data = [
   {
     qustion: "What Is Crypto Renting?",
@@ -31,21 +35,47 @@ const data = [
   },
 ];
 const Accordion = () => {
+  const [selected, setSelected] = useState(null);
 
+  const toggle = (i) => {
+    if (selected === i) {
+      return setSelected(null);
+    }
+
+    setSelected(i);
+  };
 
   return (
     <div>
-  {data.map((item, i)=>(
-    <div className="">
-      <div className="py-10 border-t-2  flex justify-between items-center ">
-        <h1 className="text-[1.1rem] tracking-wider font-bold">{item.qustion}</h1>
-      <span>+</span>
-      </div>
-      <div className=" content ">
-        {item.content}
-      </div>
-    </div>
-  ))}
+      {data.map((item, i) => (
+        <div className="border-b-2">
+          <div
+            className="py-10  cursor-pointer  flex justify-between items-center "
+            onClick={() => toggle(i)}
+          >
+            <h1 className="md:text-[1.1rem] text-[17px] tracking-wider font-bold">
+              {item.qustion}
+            </h1>
+            <span>
+              {selected === i ? (
+                <IoIosArrowUp className="font-extrabold" />
+              ) : (
+                <IoIosArrowDown className="font-extrabold" />
+              )}
+            </span>
+          </div>
+          <div
+            className={
+              selected === i
+                ? " content show pb-10 md:leading-7 leading-6 text-[17px] tracking-wide font-normal"
+                : "content text-[17px] tracking-wide font-normal"
+            }
+          >
+            {" "}
+            {item.content}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

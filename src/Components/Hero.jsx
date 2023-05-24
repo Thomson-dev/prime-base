@@ -7,6 +7,7 @@ import img1 from "../images/logo-cointelegraph.f10eec32227a19039d0ba6c9d16115ce-
 import img2 from "../images/logo-daily-express.69803bbbb689a79f2e1370095ec034b9-1.png";
 import img3 from "../images/logo-forbes.531fe76f95a0227161f643934e4223aa-1-1.png";
 import img4 from "../images/logo-bloomberg.18b32aeabc29aeeceaf7805d654c2320-1.png";
+import Tab from "./Tab";
 
 const data = [
   {
@@ -86,7 +87,7 @@ const Hero = () => {
     // </div>
     <div className="bg-[#f9f3eb] pb-[5rem] ">
       <div className="md:px-[2rem] lg:px-[4rem] px-4 md:py-[3rem] py-[1rem] md:flex ">
-        <div className="md:w-1/2  sm:pr-[2rem] md:pr-[4rem] space-y-5">
+        <div className="lg:w-1/2  sm:pr-[2rem] md:pr-[4rem] space-y-5">
           <h1 className="  font-semibold font-sans  text-3xl md:text-6xl lg:leading-[5rem] md:leading-[5rem]">
             Rent us your Crypto, earn up to{" "}
             <span className="text-green-600">15% interest</span>
@@ -102,7 +103,9 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="md:w-1/2"></div>
+        <div className="lg:w-1/2 px-[2rem]">
+          <Tab/>
+        </div>
       </div>
 
       <div className="mt-[2rem] ">
