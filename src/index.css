@@ -9,7 +9,7 @@
   background-size: cover;
   background-position: left left;
   width: 100%;
-  height: 100vh;
+  height: fit-content;
 }
 
 .background2 {
@@ -68,7 +68,7 @@
     background-size: cover;
     background-position: left left;
     width: 100%;
-    height: 60vh;
+    height: fit-content;
   }
 }
 
