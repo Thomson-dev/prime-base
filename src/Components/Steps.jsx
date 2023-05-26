@@ -4,7 +4,7 @@ import React from "react";
 import calendar from "../images/calendar.2dbcde3db11dca71dfbb.webp";
 import percentage from "../images/percent.b1cd67529f2bc04dc92d.webp";
 import time from "../images/time.74be982918db7e2772c1.webp";
-import { Fade } from "react-awesome-reveal";
+import { Bounce} from "react-awesome-reveal";
 
 const Steps = () => {
   return (
@@ -21,7 +21,7 @@ const Steps = () => {
           Testing
         </h1> */}
         <div className="md:flex flex-col justify-center   items-center py-[3rem] space-y-5">
-          <Fade direction="top" >
+          <Bounce >
             <div className="flex md:space-x-12 space-x-4   flex-col md:flex-row items-center">
               <img src={calendar} alt="" />
               <div className="">
@@ -34,9 +34,9 @@ const Steps = () => {
                 </p>
               </div>
             </div>
-          </Fade>
+          </Bounce>
 
-          <Fade top>
+          <Bounce >
             <div className="md:flex flex-col md:space-x-12 space-x-4  sm:pl-[10rem]  pl-1 md:pl-0   md:flex-row items-center">
               <img src={percentage} alt="" />
               <div className="">
@@ -49,9 +49,9 @@ const Steps = () => {
                 </p>
               </div>
             </div>
-          </Fade>
+          </Bounce>
 
-          <Fade>
+          <Bounce>
             <div className="flex  md:space-x-12 space-x-4 flex-col md:flex-row items-center">
               <img src={time} alt="" />
               <div className="">
@@ -64,7 +64,7 @@ const Steps = () => {
                 </p>
               </div>
             </div>
-          </Fade>
+          </Bounce>
         </div>
       </div>
     </div>

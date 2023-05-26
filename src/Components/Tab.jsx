@@ -15,9 +15,12 @@ const Tab = () => {
   const [dropdownOpen2, setdropdownOpen2] = useState(false);
 
 
+
+
   const toggleTab = (index) => {
     setToggleState(index);
   };
+
 
  
 
@@ -52,7 +55,7 @@ const Tab = () => {
         </button>
       </div>
       <div
-        className={`content1 max-w-[100%] border px-[2rem]  bg-[#fefcf9] space-y-6  py-5 rounded-lg shadow-xl h-[80vh] ${
+        className={`content1 max-w-[100%] border px-[2rem]  bg-[#fefcf9] space-y-6  py-5 rounded-lg shadow-xl h-fit py-7 ${
           toggleState === 1 ? "block" : "hidden"
         }`}
       >
@@ -112,23 +115,23 @@ const Tab = () => {
                   }`}>
               <ul>
                 <li className="px-3 py-2">
-                  <div className="flex items-center px-5  hover:bg-slate-300 hover:rounded-md py-2 cursor-pointer space-x-5">
+                  <button className="flex items-center px-5  hover:bg-slate-300 hover:rounded-md py-2 cursor-pointer space-x-5">
                     <img src={usdcoin} className="w-[20%]" alt="" />
                     <div className="">
                       <h1 className="font-semibold text-lg">UsdCoin</h1>
                       <h2 className="text-sm">USDC</h2>
                     </div>
-                  </div>
+                  </button>
                 </li>
 
                 <li className="px-3 py-1">
-                  <div className="flex items-center px-5 hover:bg-slate-300 hover:rounded-md py-2 cursor-pointer space-x-5">
+                  <button className="flex items-center px-5 hover:bg-slate-300 hover:rounded-md py-2 cursor-pointer space-x-5">
                     <img src={Tether} className="w-[20%]" alt="" />
                     <div className="">
                       <h1 className="font-semibold text-lg">Tether</h1>
                       <h2 className="text-sm">USDC</h2> 
                     </div>
-                  </div>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -166,7 +169,7 @@ const Tab = () => {
               <button  onClick={() => setdropdownOpen2(!dropdownOpen2)} className="w-[50%] cursor-pointer  flex items-center">
                 <img src={Tether} alt="" className="w-[15%]" />
                 <div className=""></div>
-                <h1 className="font-semibold text-lg px-2 cursor-pointer">USDT</h1>
+                <h1 >USDT</h1>
                 <IoMdArrowDropdown className="text-2xl" />
               </button>
               </div>
