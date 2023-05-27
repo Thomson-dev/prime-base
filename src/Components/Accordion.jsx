@@ -53,7 +53,7 @@ const Accordion = () => {
             className="py-10  cursor-pointer  flex justify-between items-center "
             onClick={() => toggle(i)}
           >
-            <h1 className="md:text-[1.1rem] text-[17px] tracking-wider font-bold">
+            <h1 className="md:text-[1.1rem] text-[17px] tracking-wider font-medium">
               {item.qustion}
             </h1>
             <span>
