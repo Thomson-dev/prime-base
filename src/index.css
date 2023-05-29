@@ -23,6 +23,11 @@
   font-weight: 300;
 }
 
+.range ::-webkit-slider-thumb{ 
+-webkit-appearance: none;
+}
+
+
 .content {
   max-height: 0;
   overflow: hidden;

@@ -12,7 +12,7 @@ const Faq = () => {
           <div className=" space-y-8">
             <h1 className="text-4xl font-bold font-sans">FAQ</h1>
 
-            <p className=" md:text-[19px] text-[17px] max-w-[39rem] font-semibold leading-7 tracking-normal">
+            <p className=" text-[18px] max-w-[39rem] font-semibold leading-[30px] tracking-wide">
               Our mission is to bridge the gap between Crypto and cash. We do
               this by providing instant crypto-backed financial services that
               you can use any time, anywhere, at the click of a button.
