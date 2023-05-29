@@ -1,12 +1,20 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect } from "react";
 import calendar from "../images/calendar.2dbcde3db11dca71dfbb.webp";
 import percentage from "../images/percent.b1cd67529f2bc04dc92d.webp";
 import time from "../images/time.74be982918db7e2772c1.webp";
-import { Bounce} from "react-awesome-reveal";
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 const Steps = () => {
+  useEffect(() => {
+    AOS.init({
+      duration:600,
+  
+    });
+
+}, []);
   return (
     <div className="bg-[#f9f3eb] ">
       <div className="lg:px-[4rem] md:px-[2rem] px-[1rem] md:py-[5rem] py-2 ">
@@ -20,8 +28,8 @@ const Steps = () => {
         {/* <h1 className="text-red-500 sm:text-green-500 md:text-black lg:text-orange-600 ">
           Testing
         </h1> */}
-        <div className="md:flex flex-col justify-center   items-center py-[3rem] space-y-5">
-          <Bounce >
+        <div data-aos ="fade-up" className="   md:flex flex-col justify-center   items-center py-[3rem] space-y-5">
+          
             <div className="flex md:space-x-12 space-x-4   flex-col md:flex-row items-center">
               <img src={calendar} alt="" />
               <div className="">
@@ -34,10 +42,10 @@ const Steps = () => {
                 </p>
               </div>
             </div>
-          </Bounce>
+         
 
-          <Bounce >
-            <div className="md:flex flex-col md:space-x-12 space-x-4  sm:pl-[10rem]  pl-1 md:pl-0   md:flex-row items-center">
+          
+            <div data-aos ="fade-up" className="md:flex flex-col md:space-x-12 space-x-4  sm:pl-[10rem]  pl-1 md:pl-0   md:flex-row items-center">
               <img src={percentage} alt="" />
               <div className="">
                 <h1 className="md:text-3xl sm:text-2xl text-xl font-semibold font-sans">
@@ -49,10 +57,10 @@ const Steps = () => {
                 </p>
               </div>
             </div>
-          </Bounce>
+          
 
-          <Bounce>
-            <div className="flex  md:space-x-12 space-x-4 flex-col md:flex-row items-center">
+         
+            <div data-aos ="fade-up" className="flex  md:space-x-12 space-x-4 flex-col md:flex-row items-center">
               <img src={time} alt="" />
               <div className="">
                 <h1 className="md:text-3xl text-xl font-semibold font-sans">
@@ -64,7 +72,7 @@ const Steps = () => {
                 </p>
               </div>
             </div>
-          </Bounce>
+          
         </div>
       </div>
     </div>

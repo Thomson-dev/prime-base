@@ -32,25 +32,23 @@ const data = [
 const Hero = () => {
   return (
     <div className="bg-[#f9f3eb] pb-[5rem] ">
-      <div className="md:px-[2rem] lg:px-[4rem]  px-4 md:py-[3rem] py-[1rem] md:flex justify-between">
-        <div className="space-y-4">
+      <div className="md:px-[2rem] lg:px-[4rem] px-4 md:py-[3rem] py-[1rem] md:flex justify-between">
+        <div className="space-y-5 ">
           <div>
-            <h1 className="  font-semibold font-sans  text-3xl md:text-6xl lg:leading-[5rem] md:leading-[5rem] max-w-[500px]">
+            <p className="  font-bold sm:leading-[60px] leading-[40px] font-sans  sm:text-[48px]  text-[32px] sm:max-w-[500px]">
               Rent us your Crypto, earn up to{" "}
               <span className="text-green-600">15% interest</span>
-            </h1>
+            </p>
           </div>
-          {/* <h1 className="text-red-500 sm:text-green-500 md:text-black lg:text-orange-600 ">
-            Testing
-          </h1> */}
+
           <div className="max-w-[692px]">
-            <p className="text-gray-600 font-sans text-lg font-semibold md:text-2xl max-w-[498px]  md:leading-[37px] ">
+            <p className=" text-[#6a6d70]   text-[18px] font-semibold md:text-[25px] max-w-[350px] md:max-w-[498px]  font-sans sm:leading-[37px] ">
               Earn in Crypto or Stablecoins up to 15% per month, and withdraw
               your earnings as often as every 24 hours.
             </p>
           </div>
 
-          <button className="bg-[#0c8444] hidden md:block hover:bg-green-600 text-white rounded-md px-16 text-xl font-semibold py-3">
+          <button className="bg-[#0c8444] hidden sm:block hover:bg-green-600 text-white rounded-md px-16 text-xl font-semibold py-3">
             Start Renting
           </button>
         </div>
