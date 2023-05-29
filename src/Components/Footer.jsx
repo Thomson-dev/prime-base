@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="md:px-[3rem] px-[1rem] py-[7rem] w-full space-y-20  flex md:flex-row flex-col">
         <div className="md:w-[40%]  flex  ">
           <div className="space-y-7 ">
-            <img src={primbase} alt="" className="w-[30%]" />
+            <img src={primbase} alt="" className="w-[163px] h-[125px]" />
 
             <h2 className="text-white">
               © 2021-2022 Prime Base. All Rights Reserved.

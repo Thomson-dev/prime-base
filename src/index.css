@@ -27,6 +27,9 @@
 -webkit-appearance: none;
 }
 
+.romove-counter{
+  appearance: textfield;
+}
 
 .content {
   max-height: 0;

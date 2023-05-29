@@ -43,16 +43,20 @@ const Tab = () => {
     setdropdownOpen2(fasle);
   };
 
-  const [result, setResult] = useState('');
-  const [value, setValue] = useState('22');
+  const [result, setResult] = useState("");
+  const [value, setValue] = useState("30");
 
-  const [rangeValue, setRangeValue] = useState(12);
+  const [rangeValue, setRangeValue] = useState("12");
 
   const handleRangeChange = (event) => {
     setRangeValue(event.target.value);
   };
 
   const reduceString = (str, maxLength) => {
+    if (typeof str !== "string") {
+      return "";
+    }
+
     if (str.length <= maxLength) {
       return str;
     } else {
@@ -63,12 +67,13 @@ const Tab = () => {
   useEffect(() => {
     const calculatePercentage = () => {
       const percentage = 0.15; // 15%
-      const calculatedValue = value + percentage * rangeValue;
-      setResult(calculatedValue);
+      const calculatedValue = percentage * rangeValue * value;
+     const StringResult = String(calculatedValue);
+      setResult(StringResult);
     };
 
     calculatePercentage();
-  }, [value, rangeValue])
+  }, [value, rangeValue]);
 
   return (
     <div className="mt-[1rem]">
@@ -94,8 +99,9 @@ const Tab = () => {
           Crypto
         </button>
       </div>
+      {/* Mobile Tab */}
 
-      <div className="md:hidden space-x-10 justify-center items-center border mx-auto bg-white rounded-xl mb-2 w-[380px] py-3 h-[70px] flex">
+      <div className="md:hidden space-x-10 justify-center items-center border mx-auto bg-white rounded-xl mb-2 max-w-[380px] py-3 h-[70px] flex">
         <button
           onClick={() => toggleTab(1)}
           className={`${
@@ -176,7 +182,9 @@ const Tab = () => {
             <div className="border flex w-full items-center justify-between px-3 py-[0.2rem] bg-[#f8f3eb]  rounded">
               <input
                 className=" py-3 rounded-lg px-2 w-[40%] border bg-[#f8f3eb]  border-none outline-none"
-                type=""
+                type="number"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
               />
               <button
                 onClick={() => setdropdownOpen(!dropdownOpen)}
@@ -191,7 +199,7 @@ const Tab = () => {
             </div>
 
             <div
-              className={`absolute  md:h-[150px] w-[97%] sm:left-3  h-[155px] rounded-md border border-green-600 top-[6rem] z-20   bg-slate-50 md:w-[280px]  ${
+              className={`absolute  md:h-[150px] w-[97%] sm:left-3  h-[155px] rounded-md border border-green-600 top-[5rem] sm:top-[5.6rem] md:top-[6rem] z-20   bg-slate-50 md:w-[280px]  ${
                 dropdownOpen
                   ? `top-full opacity-100 visible`
                   : `top-[110%] invisible opacity-0`
@@ -223,8 +231,6 @@ const Tab = () => {
                 })}
               </ul>
             </div>
-
-            
           </div>
 
           <div className="md:w-1/2 space-y-1">
@@ -233,10 +239,10 @@ const Tab = () => {
               <h1 className="font-bold text-lg"> {rangeValue} month(s)</h1>
               <input
                 type="range"
-                min="0"
+                min="12"
                 step="12"
                 max="36"
-                className="h-[10%] range "
+                className="h-[10%] appearance-none outline-none romove-counter range "
                 value={rangeValue}
                 onChange={handleRangeChange}
               />
@@ -245,12 +251,14 @@ const Tab = () => {
         </div>
 
         <div className="sm:border py-3   max-w-[800px] h-[109px] rounded-md">
-          <div className="flex justify-between items-center  px-4">
+          <div className="flex justify-between items-center  px-">
             <div className="md:space-y-5 space-y-2 w-1/2  relative sm:top-[-3rem] top-[-3rem] md:top-1">
               <h1 className="font-semibold text-[12px]">TOTAL EARNINGS</h1>
               <div className="flex items-center space-x-2 w-[100%]">
                 <img src={selectedItem.image} alt="" className="max-w-[18px]" />
-                <h1 className="text-4xl font-bold">{reduceString(result, 7)}</h1>
+                <h1 className="text-4xl font-bold">
+                  {reduceString(result, 5)}
+                </h1>
               </div>
             </div>
 
