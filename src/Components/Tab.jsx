@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import usdcoin from "../images/USDCoin.png";
 import Tether from "../images/Tether.png";
 import Ethereum from "../images/Tether-1.png";
+import BNB from "../images/bnb.png";
 import bankCar from "../images/bank-car.webp";
 import { Switch } from "antd";
 import bitcoin from "../images/1024px-Bitcoin.svg.png";
@@ -35,7 +36,32 @@ const Tab = () => {
     },
   ];
 
+  const data2 = [
+    {
+      id: "1",
+      image: bitcoin,
+      title: "Bitcoin",
+      txt: "BTC",
+    },
+    {
+      id: "2",
+
+      image: Ethereum,
+      txt: "Eth",
+      title: "Ethereum",
+    },
+    {
+      id: "3",
+
+      image: BNB,
+      txt: "BNB",
+      title: "BNB",
+    },
+  ];
+
   const [selectedItem, setSelectedItem] = useState(data[0]); // Set the first object as the default selected item
+
+  const [selectedItem2, setSelectedItem2] = useState(data2[0]); // Set the first object as the default selected item
 
   const handleClick = (item, fasle) => {
     setSelectedItem(item);
@@ -43,13 +69,38 @@ const Tab = () => {
     setdropdownOpen2(fasle);
   };
 
+  const [backgroundColor, setBackgroundColor] = useState(true);
+
+  const handleClickBackground = () => {
+    setBackgroundColor(false);
+  };
+
+  const handleClickBackground2 = () => {
+    setBackgroundColor(true);
+  };
+
+  const handleClick2 = (item, fasle) => {
+    setSelectedItem2(item);
+    setdropdownOpen(fasle);
+    setdropdownOpen2(fasle);
+  };
+
   const [result, setResult] = useState("");
+  const [result2, setResult2] = useState("");
+
   const [value, setValue] = useState("30");
+  const [value2, setValue2] = useState("0.0025");
 
   const [rangeValue, setRangeValue] = useState("12");
 
+  const [rangeValue2, setRangeValue2] = useState("12");
+
   const handleRangeChange = (event) => {
     setRangeValue(event.target.value);
+  };
+
+  const handleRangeChange2 = (event) => {
+    setRangeValue2(event.target.value);
   };
 
   const reduceString = (str, maxLength) => {
@@ -60,18 +111,27 @@ const Tab = () => {
     if (str.length <= maxLength) {
       return str;
     } else {
-      return str.substring(0, maxLength) + "...";
+      return str.substring(0, maxLength);
     }
   };
+
+  useEffect(() => {
+    const calculatePercentage2 = () => {
+      const percentage2 = 0.15; // 15%
+      const calculatedValue2 = percentage2 * rangeValue2 * value2;
+      const StringResult2 = String(calculatedValue2);
+      setResult2(StringResult2);
+    };
+    calculatePercentage2();
+  }, [value2, rangeValue2]);
 
   useEffect(() => {
     const calculatePercentage = () => {
       const percentage = 0.15; // 15%
       const calculatedValue = percentage * rangeValue * value;
-     const StringResult = String(calculatedValue);
+      const StringResult = String(calculatedValue);
       setResult(StringResult);
     };
-
     calculatePercentage();
   }, [value, rangeValue]);
 
@@ -130,14 +190,37 @@ const Tab = () => {
         }`}
       >
         <div className="flex justify-between space-x-3">
-          <div className="border rounded-lg bg-[#0c8444] py-2 px-3 flex justify-between w-[100%]">
+          <div
+            className={`border ${
+              backgroundColor ? " bg-[#ddf2e7]" : "bg-[#0c8444]"
+            } rounded-lg  py-2 px-3 flex justify-between w-[100%]  `}
+            onClick={handleClickBackground}
+          >
             <div className=" space-y-4">
               <div>
-                <h1 className="text-2xl font-bold text-green-300">15%</h1>
-                <p className="text-white text-[14px]">Per Month</p>
+                <h1
+                  className={`text-2xl font-bold text-[#343434] ${
+                    backgroundColor ? "text-black" : "text-green-500"
+                  }`}
+                >
+                  15%
+                </h1>
+                <p
+                  className={`text-slate-700 text-[14px] ${
+                    backgroundColor ? "text-black" : "text-white"
+                  } `}
+                >
+                  Per Month
+                </p>
               </div>
 
-              <h1 className="text-xl font-semibold text-white">USDCoin</h1>
+              <h1
+                className={`text-xl font-semibold text-black ${
+                  backgroundColor ? "text-black" : "text-white"
+                } `}
+              >
+                USDCoin
+              </h1>
             </div>
             <div className="max-w-[100%]">
               <img
@@ -148,14 +231,25 @@ const Tab = () => {
             </div>
           </div>
 
-          <div className="border rounded-lg bg-[#ddf2e7] py-2 px-3 flex justify-between w-[100%]">
+          <div
+            className={`border rounded-lg py-2 px-3 flex justify-between w-[100%]  ${
+              backgroundColor ? " bg-[#0c8444] " : "bg-[#ddf2e7]"
+            } `}
+            onClick={handleClickBackground2}
+          >
             <div className=" space-y-4">
               <div>
-                <h1 className="text-2xl font-bold text-black">15%</h1>
-                <p className="text-slate-700 text-[14px]">Per Month</p>
+                <h1 className={`text-2xl font-bold text-black ${
+                    backgroundColor ? "text-green-500" : "text-black"
+                  }`}>15%</h1>
+                <p  className={`text-slate-700 text-[14px] ${
+                    backgroundColor ? "text-white" : "text-black"
+                  } `}>Per Month</p>
               </div>
 
-              <h1 className="text-xl font-semibold text-black">Tether</h1>
+              <h1   className={`text-xl font-semibold text-black ${
+                  backgroundColor ? "text-white" : "text-black"
+                } `}>Tether</h1>
             </div>
 
             <div className="max-w-[100%]">
@@ -181,7 +275,7 @@ const Tab = () => {
             <p className="text-xs font-semibold ">CRYPTO RENT AMOUNT</p>
             <div className="border flex w-full items-center justify-between px-3 py-[0.2rem] bg-[#f8f3eb]  rounded">
               <input
-                className=" py-3 rounded-lg px-2 w-[40%] border bg-[#f8f3eb]  border-none outline-none"
+                className=" py-3 rounded-lg text-[18px] font-semibold  px-2 w-[40%] border bg-[#f8f3eb]  border-none outline-none"
                 type="number"
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
@@ -242,7 +336,7 @@ const Tab = () => {
                 min="12"
                 step="12"
                 max="36"
-                className="h-[10%] appearance-none outline-none romove-counter range "
+                className="h-[10%]  appearance-none outline-none romove-counter range "
                 value={rangeValue}
                 onChange={handleRangeChange}
               />
@@ -257,7 +351,7 @@ const Tab = () => {
               <div className="flex items-center space-x-2 w-[100%]">
                 <img src={selectedItem.image} alt="" className="max-w-[18px]" />
                 <h1 className="text-4xl font-bold">
-                  {reduceString(result, 5)}
+                  {reduceString(result, 6)}
                 </h1>
               </div>
             </div>
@@ -329,14 +423,37 @@ const Tab = () => {
         }`}
       >
         <div className="flex justify-between space-x-3">
-          <div className="border rounded-lg bg-[#ddf2e7] py-2 px-3 flex justify-between w-[100%]">
+          <div
+            className={`border ${
+              backgroundColor ? " bg-[#ddf2e7]" : "bg-[#0c8444]"
+            } rounded-lg  py-2 px-3 flex justify-between w-[100%]  `}
+            onClick={handleClickBackground}
+          >
             <div className=" space-y-4">
               <div>
-                <h1 className="text-2xl font-bold text-[#343434]">15%</h1>
-                <p className="text-[#6a6d70] text-[14px]">Per Month</p>
+                <h1
+                  className={`text-2xl font-bold text-[#343434] ${
+                    backgroundColor ? "text-black" : "text-green-500"
+                  }`}
+                >
+                  15%
+                </h1>
+                <p
+                  className={`text-slate-700 text-[14px] ${
+                    backgroundColor ? "text-black" : "text-white"
+                  } `}
+                >
+                  Per Month
+                </p>
               </div>
 
-              <h1 className="text-xl font-semibold text-[#343434]">Bitcoin</h1>
+              <h1
+                className={`text-xl font-semibold text-black ${
+                  backgroundColor ? "text-black" : "text-white"
+                } `}
+              >
+                Bitcoin
+              </h1>
             </div>
             <div className="max-w-[100%]">
               <img
@@ -347,14 +464,37 @@ const Tab = () => {
             </div>
           </div>
 
-          <div className="border rounded-lg bg-[#ddf2e7] py-2 px-3 flex justify-between w-[100%]">
+          <div
+            className={`border rounded-lg py-2 px-3 flex justify-between w-[100%]  ${
+              backgroundColor ? " bg-[#0c8444] " : "bg-[#ddf2e7]"
+            } `}
+            onClick={handleClickBackground2}
+          >
             <div className=" space-y-4">
               <div>
-                <h1 className="text-2xl font-bold text-black">15%</h1>
-                <p className="text-slate-700 text-[14px]">Per Month</p>
+                <h1
+                  className={`text-2xl font-bold text-black ${
+                    backgroundColor ? "text-green-500" : "text-black"
+                  }`}
+                >
+                  15%
+                </h1>
+                <p
+                  className={`text-slate-700 text-[14px] ${
+                    backgroundColor ? "text-white" : "text-black"
+                  } `}
+                >
+                  Per Month
+                </p>
               </div>
 
-              <h1 className="text-xl font-semibold text-black">Ethererum</h1>
+              <h1
+                className={`text-xl font-semibold text-black ${
+                  backgroundColor ? "text-white" : "text-black"
+                } `}
+              >
+                Ethererum
+              </h1>
             </div>
 
             <div className="max-w-[100%]">
@@ -380,50 +520,53 @@ const Tab = () => {
             <p className="text-xs font-semibold ">CRYPTO RENT AMOUNT</p>
             <div className="border flex w-full items-center justify-between px-3 py-[0.2rem] bg-[#f8f3eb]  rounded">
               <input
-                className=" py-3 rounded-lg px-2 w-[40%] border bg-[#f8f3eb]  border-none outline-none"
+                className=" py-3 rounded-lg text-[18px] font-semibold px-2 w-[60%] border bg-[#f8f3eb]  border-none outline-none"
                 type="number"
-                placeholder="Enter a value"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
+                value={value2}
+                onChange={(e) => setValue2(e.target.value)}
               />
               <button
                 onClick={() => setdropdownOpen(!dropdownOpen)}
                 className=" cursor-pointer space-x-2  flex items-center"
               >
-                <img src={selectedItem.image} alt="" className="max-w-[18px]" />
+                <img
+                  src={selectedItem2.image}
+                  alt=""
+                  className="max-w-[18px]"
+                />
                 <h1 className="font-semibold text-lg cursor-pointer">
-                  {selectedItem.txt}
+                  {selectedItem2.txt}
                 </h1>
                 <IoMdArrowDropdown className="text-2xl" />
               </button>
             </div>
 
             <div
-              className={`absolute  md:h-[150px] w-[97%] sm:left-3  h-[155px] rounded-md border border-green-600 top-[6rem] z-20   bg-slate-50 md:w-[280px]  ${
+              className={`absolute  md:h-[210px]  w-[97%] sm:left-3  h-[210px] rounded-md border border-green-600 top-[6rem] z-20   bg-slate-50 md:w-[280px]  ${
                 dropdownOpen
                   ? `top-full opacity-100 visible`
                   : `top-[110%] invisible opacity-0`
               }`}
             >
               <ul>
-                {data.map((item) => {
+                {data2.map((item2) => {
                   return (
                     <li className="space-y-3 pt-1 px-3">
                       <div
-                        key={item.id}
-                        onClick={() => handleClick(item, false)}
+                        key={item2.id}
+                        onClick={() => handleClick2(item2, false)}
                         className={`flex items-center hover:rounded-md  py-[9px] hover:bg-[#DDF2E7] px-5  cursor-pointer space-x-3  ${
-                          selectedItem === item
+                          selectedItem === item2
                             ? "bg-slate-500 rounded-md "
                             : ""
                         } `}
                       >
-                        <img src={item.image} className="w-[46px]" alt="" />
+                        <img src={item2.image} className="w-[46px]" alt="" />
                         <div className="">
                           <h1 className="font-semibold text-[18px]">
-                            {item.title}
+                            {item2.title}
                           </h1>
-                          <h2 className="text-[12px]">{item.txt}</h2>
+                          <h2 className="text-[12px]">{item2.txt}</h2>
                         </div>
                       </div>
                     </li>
@@ -436,15 +579,15 @@ const Tab = () => {
           <div className="md:w-1/2 space-y-1">
             <p className="text-xs font-semibold ">TERM</p>
             <div className="border  flex justify-items-end flex-col py-[0.3rem] px-2 bg-[#f8f3eb]  rounded">
-              <h1 className="font-bold text-lg"> {rangeValue} month(s)</h1>
+              <h1 className="font-bold text-lg"> {rangeValue2} month(s)</h1>
               <input
                 type="range"
-                min="0"
+                min="12"
                 step="12"
                 max="36"
                 className="h-[10%] range "
-                value={rangeValue}
-                onChange={handleRangeChange}
+                value={rangeValue2}
+                onChange={handleRangeChange2}
               />
             </div>
           </div>
@@ -452,11 +595,17 @@ const Tab = () => {
 
         <div className="sm:border py-3   max-w-[800px] h-[109px] rounded-md">
           <div className="flex justify-between items-center  px-4">
-            <div className="md:space-y-5 space-y-2 w-1/2  relative sm:top-[-3rem] top-[-3rem] md:top-1">
+            <div className="md:space-y-5 space-y-2 w-1/2  relative sm:top-[-5rem] top-[-5rem] md:top-1">
               <h1 className="font-semibold text-[12px]">TOTAL EARNINGS</h1>
               <div className="flex items-center space-x-2 w-[100%]">
-                <img src={selectedItem.image} alt="" className="max-w-[18px]" />
-                <h1 className="text-4xl font-bold">0</h1>
+                <img
+                  src={selectedItem2.image}
+                  alt=""
+                  className="max-w-[18px]"
+                />
+                <h1 className="text-4xl font-bold">
+                  {reduceString(result2, 6)}
+                </h1>
               </div>
             </div>
 
@@ -470,45 +619,45 @@ const Tab = () => {
                   className="max-w-[50%]  cursor-pointer  flex items-center"
                 >
                   <img
-                    src={selectedItem.image}
+                    src={selectedItem2.image}
                     alt=""
                     className="max-w-[18px]"
                   />
                   <div className=""></div>
                   <h1 className="font-semibold text-lg px-2 cursor-pointer">
                     {" "}
-                    {selectedItem.txt}
+                    {selectedItem2.txt}
                   </h1>
                   <IoMdArrowDropdown className="text-2xl" />
                 </button>
               </div>
 
               <div
-                className={`md:absolute flex   h-[155px] rounded-md border border-green-500 z-20  top-[4rem] left-[-3rem] bg-slate-50 md:w-[280px]  ${
+                className={`md:absolute flex   h-[210px] rounded-md border border-green-500 z-20  top-[4rem] left-[-3rem] bg-slate-50 md:w-[280px]  ${
                   dropdownOpen2
                     ? `top-full opacity-100 visible`
                     : `top-[110%] invisible opacity-0`
                 }`}
               >
                 <ul className="w-[100%]">
-                  {data.map((item) => {
+                  {data2.map((item2) => {
                     return (
                       <li className="space-y-3 pt-1 px-3 ">
                         <div
-                          key={item.id}
-                          onClick={() => handleClick(item, false)}
+                          key={item2.id}
+                          onClick={() => handleClick2(item2, false)}
                           className={`flex items-center hover:rounded-md w-[] py-[9px] hover:bg-[#DDF2E7] px-5  cursor-pointer space-x-3  ${
-                            selectedItem === item
+                            selectedItem === item2
                               ? "bg-slate-500 rounded-md "
                               : ""
                           } `}
                         >
-                          <img src={item.image} className="w-[46px]" alt="" />
+                          <img src={item2.image} className="w-[46px]" alt="" />
                           <div className="">
                             <h1 className="font-semibold text-[18px]">
-                              {item.title}
+                              {item2.title}
                             </h1>
-                            <h2 className="text-[12px]">{item.txt}</h2>
+                            <h2 className="text-[12px]">{item2.txt}</h2>
                           </div>
                         </div>
                       </li>
