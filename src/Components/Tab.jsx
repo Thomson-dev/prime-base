@@ -22,7 +22,7 @@ const Tab = () => {
   const [value2, setValue2] = useState("0.0025");
 
   const [rangeValue, setRangeValue] = useState(12);
-  const [backgroundColor, setBackgroundColor] = useState(false);
+ 
   const [rangeValue2, setRangeValue2] = useState(12);
 
   const toggleTab = (index) => {
@@ -56,13 +56,15 @@ const Tab = () => {
       image: bitcoin,
       percent: "40%",
       percentage: 0.4,
+      month: "per month",
       title: "Bitcoin",
       txt: "BTC",
     },
     {
       id: "2",
-      percentage: 25,
+      percentage: 0.25,
       percent: "25%",
+      month: "per month",
       image: Ethereum,
       txt: "Eth",
       title: "Ethereum",
@@ -70,6 +72,7 @@ const Tab = () => {
     {
       id: "3",
       percentage: 0,
+      month: "per month",
       image: BNB,
       txt: "BNB",
       title: "BNB",
@@ -79,41 +82,36 @@ const Tab = () => {
   const [selectedItem, setSelectedItem] = useState(data[0]); // Set the first object as the default selected item
 
   const [selectedItem2, setSelectedItem2] = useState(data2[0]); // Set the first object as the default selected item
-  const [activeItemId, setActiveItemId] = useState(null);
-  console.log(activeItemId);
+  const [activeItemId, setActiveItemId] = useState([]);
+  const [activeItemId2, setActiveItemId2] = useState([]);
+
   const handleClick = (item, fasle) => {
     setSelectedItem(item);
     setdropdownOpen(fasle);
     setdropdownOpen2(fasle);
-    setActiveItemId(item);
-  };
-
-  const handleClickBackground = () => {
-    setBackgroundColor(false);
+    setActiveItemId(item.id);
   };
 
   const handleRangeChange2 = (event) => {
     setRangeValue2(event.target.value);
-  };
-  const handleClickBackground2 = () => {
-    setBackgroundColor(true);
   };
 
   const handleClick2 = (item, fasle) => {
     setSelectedItem2(item);
     setdropdownOpen(fasle);
     setdropdownOpen2(fasle);
+    setActiveItemId2(item.id);
   };
 
   useEffect(() => {
     const calculatePercentage = () => {
-      const numValue = parseFloat(value) || 0;
+      const numValue = Number(value);
 
       const calculatedValue = selectedItem.percentage * numValue;
       const increasedValue = calculatedValue * rangeValue;
 
       const finalValue = increasedValue + numValue;
-      console.log(numValue);
+
       setResult(finalValue.toFixed(3));
     };
 
@@ -122,18 +120,16 @@ const Tab = () => {
 
   useEffect(() => {
     const calculatePercentage2 = () => {
-      const percentage2 = 0.15;
-
-      const numValue2 = parseFloat(value2) || 0;
-      const calculatedValue2 = percentage2 * numValue2;
+      const numValue2 = Number(value2);
+      const calculatedValue2 = selectedItem2.percentage * numValue2;
       const increasedValue2 = calculatedValue2 * rangeValue2;
 
       const finalValue = increasedValue2 + numValue2;
 
-      setResult2(finalValue.toFixed(6));
+      setResult2(finalValue.toFixed(5));
     };
     calculatePercentage2();
-  }, [value2, rangeValue2]);
+  }, [value2, rangeValue2, selectedItem2.percentage]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -203,21 +199,35 @@ const Tab = () => {
               <div
                 key={item.id}
                 className={`border cursor-pointer rounded-lg py-2 px-3 flex justify-between w-[100%] ${
-                  activeItemId === item.id ? "" : ""
+                  activeItemId === item.id ? "bg-[#0c8444]" : "bg-[#ddf2e7] "
                 }   `}
                 onClick={() => handleClick(item)}
               >
                 <div className=" space-y-4">
                   <div>
-                    <h1 className={`text-2xl font-bold text-black `}>
+                    <h1
+                      className={`text-2xl font-bold text-black  ${
+                        activeItemId === item.id
+                          ? "text-green-500"
+                          : "text-black"
+                      }`}
+                    >
                       {item.percent}
                     </h1>
-                    <p className={`text-slate-700 text-[14px] `}>
+                    <p
+                      className={`text-slate-700 text-[14px] ${
+                        activeItemId === item.id ? "text-white" : "text-black"
+                      }`}
+                    >
                       {item.month}
                     </p>
                   </div>
 
-                  <h1 className={`text-xl font-semibold text-black `}>
+                  <h1
+                    className={`text-xl font-semibold text-black ${
+                      activeItemId === item.id ? "text-white" : "text-black"
+                    }`}
+                  >
                     {item.title}
                   </h1>
                 </div>
@@ -399,88 +409,51 @@ const Tab = () => {
         }`}
       >
         <div className="flex justify-between space-x-3">
-          <div
-            className={`border cursor-pointer ${
-              backgroundColor ? " bg-[#ddf2e7]" : "bg-[#0c8444]"
-            } rounded-lg  py-2 px-3 flex justify-between w-[100%]  `}
-            onClick={handleClickBackground}
-          >
-            <div className=" space-y-4">
-              <div>
-                <h1
-                  className={`text-2xl font-bold text-[#343434] ${
-                    backgroundColor ? "text-black" : "text-green-500"
-                  }`}
-                >
-                  15%
-                </h1>
-                <p
-                  className={`text-slate-700 text-[14px] ${
-                    backgroundColor ? "text-black" : "text-white"
-                  } `}
-                >
-                  Per Month
-                </p>
-              </div>
-
-              <h1
-                className={`text-xl font-semibold text-black ${
-                  backgroundColor ? "text-black" : "text-white"
-                } `}
+          {data2.slice(0, 2).map((item2) => {
+            return (
+              <div
+                key={item2.id}
+                onClick={() => handleClick2(item2, false)}
+                className={`border cursor-pointer rounded-lg  py-2 px-3 flex justify-between w-[100%]  ${
+                  activeItemId2 === item2.id ? "bg-[#0c8444]" : "bg-[#ddf2e7] "
+                }   `}
               >
-                Bitcoin
-              </h1>
-            </div>
-            <div className="max-w-[100%]">
-              <img
-                src={bitcoin}
-                className="md:w-[109px] md:h-[109px] sm:w-[109px] sm:h-[109px] w-[57px] h-[50px] pl-3"
-                alt=""
-              />
-            </div>
-          </div>
+                <div className=" space-y-4">
+                  <div>
+                    <h1 className={`text-2xl font-bold text-[#343434]  ${
+                        activeItemId2 === item2.id
+                          ? "text-green-500"
+                          : "text-black"
+                      }`}>
+                      {item2.percent}
+                    </h1>
+                    <p className={`text-slate-700 text-[14px]  ${
+                        activeItemId2 === item2.id
+                          ? "text-white"
+                          : "text-black"
+                      } `}>
+                      {item2.month}
+                    </p>
+                  </div>
 
-          <div
-            className={`border cursor-pointer rounded-lg py-2 px-3 flex justify-between w-[100%]  ${
-              backgroundColor ? " bg-[#0c8444] " : "bg-[#ddf2e7]"
-            } `}
-            onClick={handleClickBackground2}
-          >
-            <div className=" space-y-4">
-              <div>
-                <h1
-                  className={`text-2xl font-bold text-black ${
-                    backgroundColor ? "text-green-500" : "text-black"
-                  }`}
-                >
-                  15%
-                </h1>
-                <p
-                  className={`text-slate-700 text-[14px] ${
-                    backgroundColor ? "text-white" : "text-black"
-                  } `}
-                >
-                  Per Month
-                </p>
+                  <h1 className={`text-xl font-semibold text-black ${
+                        activeItemId2 === item2.id
+                          ? "text-white"
+                          : "text-black"
+                      }  `}>
+                    {item2.title}
+                  </h1>
+                </div>
+                <div className="max-w-[100%]">
+                  <img
+                    src={item2.image}
+                    className="md:w-[109px] md:h-[109px] sm:w-[109px] sm:h-[109px] w-[57px] h-[50px] pl-3"
+                    alt=""
+                  />
+                </div>
               </div>
-
-              <h1
-                className={`text-xl font-semibold text-black ${
-                  backgroundColor ? "text-white" : "text-black"
-                } `}
-              >
-                Ethererum
-              </h1>
-            </div>
-
-            <div className="max-w-[100%]">
-              <img
-                src={Ethereum}
-                className="md:w-[109px] md:h-[109px] sm:w-[109px] sm:h-[109px] w-[57px] h-[50px] pl-3"
-                alt=""
-              />
-            </div>
-          </div>
+            );
+          })}
         </div>
 
         <div className="flex space-x-4 px-4 py-3 bg-[#f8f3eb] rounded-lg items-center">
