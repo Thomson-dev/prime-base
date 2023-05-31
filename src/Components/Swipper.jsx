@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import Bitcoin from "../images/1024px-Bitcoin.svg.png";
+import BNB from  "../images/bnb.png"
 import Tether from "../images/Tether.png";
 import Ethereum from "../images/Tether-1.png";
 // Import Swiper styles
@@ -35,8 +36,8 @@ const Swipper = () => {
         effect = {"fade"}
         speed={800}
         autoplay={{ delay: 2000 }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+       
+      
       >
         <SwiperSlide>
           <div
@@ -46,7 +47,7 @@ const Swipper = () => {
           >
             <img src={Bitcoin} alt="" className="lg:w-[25%] w-[40%]" />
             <div className="">
-              <div className="">
+              <div className="space-y-4">
                 <h1 className="text-4xl font-bold text-slate-900">Bitcoin</h1>
                 <p className="text-[1.1em] text-[#777571] font-sans font-normal">
                   {" "}
@@ -70,10 +71,10 @@ const Swipper = () => {
             className="max-w-[38rem] flex lg:flex-row  md:flex-col flex-col bg-[#f9f3eb] px-7 cursor-grab md:space-x-5 
           items-center space-y-5 md:space-y-0 py-8 border border-gray-200 rounded-xl shadow-xl"
           >
-            <img src={Bitcoin} alt="" className="lg:w-[25%] w-[40%]" />
+            <img src={BNB} alt="" className="lg:w-[25%] w-[40%]" />
             <div className="">
-              <div className="">
-                <h1 className="text-4xl font-bold text-slate-900">BitCoin</h1>
+              <div className="space-y-4">
+                <h1 className="text-4xl font-bold text-slate-900">BNB</h1>
                 <p className="text-[1.1em] text-[#777571] font-sans font-normal">
                   {" "}
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -95,7 +96,7 @@ const Swipper = () => {
           <div className="max-w-[38rem] flex bg-[#f9f3eb] px-7 lg:flex-row  md:flex-col flex-col cursor-grab md:space-x-5 space-y-5 md:space-y-0 items-center py-8 border border-gray-200 rounded-xl shadow-xl">
             <img src={Ethereum} alt="" className="lg:w-[25%] w-[40%]" />
             <div className="">
-              <div className="">
+              <div className="space-y-4">
                 <h1 className="text-4xl font-bold text-slate-900">Ethereum</h1>
                 <p className="text-[1.1em] text-[#777571] font-sans font-normal">
                   {" "}
@@ -118,7 +119,7 @@ const Swipper = () => {
           <div className="max-w-[38rem] flex bg-[#f9f3eb] px-7 lg:flex-row  md:flex-col flex-col cursor-grab md:space-x-5  space-y-5 md:space-y-0 items-center py-8 border border-gray-200 rounded-xl shadow-xl">
             <img src={Tether} alt="" className="lg:w-[25%] w-[40%]" />
             <div className="">
-              <div className="space-y-">
+              <div className="space-y-4">
                 <h1 className="text-4xl font-bold text-slate-900">Tether</h1>
                 <p className="text-[1.1em] text-[#777571] font-sans font-normal">
                   {" "}

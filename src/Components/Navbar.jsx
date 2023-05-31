@@ -39,10 +39,10 @@ const Navbar = () => {
 
         <div className="flex gap-x-4   items-center">
           <ul className="flex items-center  gap-5 ">
-            <li className="py-2 px-5 bg-white text-[#1c2120] text-lg font-semibold rounded-3xl">
+            <button className="py-2 px-5 bg-white text-[#1c2120] text-lg font-semibold rounded-3xl">
               Open Account
-            </li>
-            <li className="text-lg text-white font-semibold">Sign In</li>
+            </button>
+            <button className="text-lg text-white font-semibold">Sign In</button>
           </ul>
         </div>
       </div>

@@ -15,6 +15,20 @@ const Tab = () => {
   const [dropdownOpen, setdropdownOpen] = useState(false);
 
   const [dropdownOpen2, setdropdownOpen2] = useState(false);
+  const [result, setResult] = useState(0);
+  const [result2, setResult2] = useState(0);
+
+  const [value, setValue] = useState('30');
+  const [value2, setValue2] = useState("0.0025");
+
+  const [rangeValue, setRangeValue] = useState(12);
+
+  const [rangeValue2, setRangeValue2] = useState(12);
+
+
+
+
+
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -59,9 +73,11 @@ const Tab = () => {
     },
   ];
 
+
   const [selectedItem, setSelectedItem] = useState(data[0]); // Set the first object as the default selected item
 
   const [selectedItem2, setSelectedItem2] = useState(data2[0]); // Set the first object as the default selected item
+  
 
   const handleClick = (item, fasle) => {
     setSelectedItem(item);
@@ -75,6 +91,10 @@ const Tab = () => {
     setBackgroundColor(false);
   };
 
+
+  const handleRangeChange2 = (event) => {
+    setRangeValue2(event.target.value);
+  };
   const handleClickBackground2 = () => {
     setBackgroundColor(true);
   };
@@ -85,55 +105,59 @@ const Tab = () => {
     setdropdownOpen2(fasle);
   };
 
-  const [result, setResult] = useState("");
-  const [result2, setResult2] = useState("");
 
-  const [value, setValue] = useState("30");
-  const [value2, setValue2] = useState("0.0025");
+ 
 
-  const [rangeValue, setRangeValue] = useState("12");
 
-  const [rangeValue2, setRangeValue2] = useState("12");
 
-  const handleRangeChange = (event) => {
-    setRangeValue(event.target.value);
-  };
-
-  const handleRangeChange2 = (event) => {
-    setRangeValue2(event.target.value);
-  };
-
-  const reduceString = (str, maxLength) => {
-    if (typeof str !== "string") {
-      return "";
-    }
-
-    if (str.length <= maxLength) {
-      return str;
-    } else {
-      return str.substring(0, maxLength);
-    }
-  };
-
-  useEffect(() => {
-    const calculatePercentage2 = () => {
-      const percentage2 = 0.15; // 15%
-      const calculatedValue2 = percentage2 * rangeValue2 * value2;
-      const StringResult2 = String(calculatedValue2);
-      setResult2(StringResult2);
-    };
-    calculatePercentage2();
-  }, [value2, rangeValue2]);
 
   useEffect(() => {
     const calculatePercentage = () => {
       const percentage = 0.15; // 15%
-      const calculatedValue = percentage * rangeValue * value;
-      const StringResult = String(calculatedValue);
-      setResult(StringResult);
+      const numValue = parseFloat(value) || 0;
+
+    
+      const calculatedValue = percentage * numValue;
+      const increasedValue = calculatedValue * rangeValue;
+  
+      const finalValue = increasedValue + numValue;
+      console.log(numValue);
+      setResult(finalValue.toFixed(3));
     };
+  
     calculatePercentage();
   }, [value, rangeValue]);
+
+
+
+
+
+  useEffect(() => {
+    const calculatePercentage2 = () => {
+      const percentage2 = 0.15; 
+
+      const numValue2 = parseFloat(value2) || 0
+      const calculatedValue2 = percentage2 * numValue2;
+      const increasedValue2 = calculatedValue2 * rangeValue2;
+    
+      const finalValue = increasedValue2  + numValue2;
+
+      
+      setResult2(finalValue.toFixed(6));
+    
+    };
+    calculatePercentage2();
+  }, [value2, rangeValue2]);
+
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    if (name === 'months') {
+      setRangeValue(Number(value));
+    } else if (name === 'value') {
+      setValue((value));
+    }
+  };
 
   return (
     <div className="mt-[1rem]">
@@ -191,7 +215,7 @@ const Tab = () => {
       >
         <div className="flex justify-between space-x-3">
           <div
-            className={`border ${
+            className={`border cursor-pointer ${
               backgroundColor ? " bg-[#ddf2e7]" : "bg-[#0c8444]"
             } rounded-lg  py-2 px-3 flex justify-between w-[100%]  `}
             onClick={handleClickBackground}
@@ -232,24 +256,36 @@ const Tab = () => {
           </div>
 
           <div
-            className={`border rounded-lg py-2 px-3 flex justify-between w-[100%]  ${
+            className={`border cursor-pointer rounded-lg py-2 px-3 flex justify-between w-[100%]  ${
               backgroundColor ? " bg-[#0c8444] " : "bg-[#ddf2e7]"
             } `}
             onClick={handleClickBackground2}
           >
             <div className=" space-y-4">
               <div>
-                <h1 className={`text-2xl font-bold text-black ${
+                <h1
+                  className={`text-2xl font-bold text-black ${
                     backgroundColor ? "text-green-500" : "text-black"
-                  }`}>15%</h1>
-                <p  className={`text-slate-700 text-[14px] ${
+                  }`}
+                >
+                  15%
+                </h1>
+                <p
+                  className={`text-slate-700 text-[14px] ${
                     backgroundColor ? "text-white" : "text-black"
-                  } `}>Per Month</p>
+                  } `}
+                >
+                  Per Month
+                </p>
               </div>
 
-              <h1   className={`text-xl font-semibold text-black ${
+              <h1
+                className={`text-xl font-semibold text-black ${
                   backgroundColor ? "text-white" : "text-black"
-                } `}>Tether</h1>
+                } `}
+              >
+                Tether
+              </h1>
             </div>
 
             <div className="max-w-[100%]">
@@ -273,12 +309,13 @@ const Tab = () => {
         <div className="flex md:flex-row flex-col md:items-center md:space-x-4 space-y-1 relative">
           <div className="md:max-w-[50%] space-y-1 ">
             <p className="text-xs font-semibold ">CRYPTO RENT AMOUNT</p>
-            <div className="border flex w-full items-center justify-between px-3 py-[0.2rem] bg-[#f8f3eb]  rounded">
+            <div className= {`border flex w-full items-center justify-between px-3 py-[0.2rem] bg-[#f8f3eb]  rounded ${value.trim() === '' ? 'border-red-500' : ''}`}>
               <input
                 className=" py-3 rounded-lg text-[18px] font-semibold  px-2 w-[40%] border bg-[#f8f3eb]  border-none outline-none"
                 type="number"
+                name="value"
                 value={value}
-                onChange={(e) => setValue(e.target.value)}
+                onChange={handleChange}
               />
               <button
                 onClick={() => setdropdownOpen(!dropdownOpen)}
@@ -338,20 +375,21 @@ const Tab = () => {
                 max="36"
                 className="h-[10%]  appearance-none outline-none romove-counter range "
                 value={rangeValue}
-                onChange={handleRangeChange}
+                name = 'months'
+                onChange={handleChange}
               />
             </div>
           </div>
         </div>
 
         <div className="sm:border py-3   max-w-[800px] h-[109px] rounded-md">
-          <div className="flex justify-between items-center  px-">
+          <div className="flex justify-between items-center  px-3">
             <div className="md:space-y-5 space-y-2 w-1/2  relative sm:top-[-3rem] top-[-3rem] md:top-1">
               <h1 className="font-semibold text-[12px]">TOTAL EARNINGS</h1>
               <div className="flex items-center space-x-2 w-[100%]">
                 <img src={selectedItem.image} alt="" className="max-w-[18px]" />
                 <h1 className="text-4xl font-bold">
-                  {reduceString(result, 6)}
+                  {result}
                 </h1>
               </div>
             </div>
@@ -424,7 +462,7 @@ const Tab = () => {
       >
         <div className="flex justify-between space-x-3">
           <div
-            className={`border ${
+            className={`border cursor-pointer ${
               backgroundColor ? " bg-[#ddf2e7]" : "bg-[#0c8444]"
             } rounded-lg  py-2 px-3 flex justify-between w-[100%]  `}
             onClick={handleClickBackground}
@@ -465,7 +503,7 @@ const Tab = () => {
           </div>
 
           <div
-            className={`border rounded-lg py-2 px-3 flex justify-between w-[100%]  ${
+            className={`border cursor-pointer rounded-lg py-2 px-3 flex justify-between w-[100%]  ${
               backgroundColor ? " bg-[#0c8444] " : "bg-[#ddf2e7]"
             } `}
             onClick={handleClickBackground2}
@@ -518,7 +556,7 @@ const Tab = () => {
         <div className="flex md:flex-row flex-col md:items-center md:space-x-4 space-y-1 relative">
           <div className="md:max-w-[50%] space-y-1 ">
             <p className="text-xs font-semibold ">CRYPTO RENT AMOUNT</p>
-            <div className="border flex w-full items-center justify-between px-3 py-[0.2rem] bg-[#f8f3eb]  rounded">
+            <div className= {`border flex w-full items-center justify-between px-3 py-[0.2rem] bg-[#f8f3eb]  rounded ${value2.trim() === '' ? 'border-red-500' : ''}`}>
               <input
                 className=" py-3 rounded-lg text-[18px] font-semibold px-2 w-[60%] border bg-[#f8f3eb]  border-none outline-none"
                 type="number"
@@ -604,7 +642,7 @@ const Tab = () => {
                   className="max-w-[18px]"
                 />
                 <h1 className="text-4xl font-bold">
-                  {reduceString(result2, 6)}
+                 {result2}
                 </h1>
               </div>
             </div>
