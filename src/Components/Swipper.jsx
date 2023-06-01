@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import Bitcoin from "../images/1024px-Bitcoin.svg.png";
-import BNB from  "../images/bnb.png"
+import BNB from "../images/bnb.png";
 import Tether from "../images/Tether.png";
 import Ethereum from "../images/Tether-1.png";
 // Import Swiper styles
@@ -33,11 +33,9 @@ const Swipper = () => {
             slidesPerView: 2,
           },
         }}
-        effect = {"fade"}
+        effect={"fade"}
         speed={800}
         autoplay={{ delay: 2000 }}
-       
-      
       >
         <SwiperSlide>
           <div
@@ -49,11 +47,11 @@ const Swipper = () => {
             <div className="">
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold text-slate-900">Bitcoin</h1>
-                <p className="text-[1.1em] text-[#777571] font-sans font-normal">
+                <p className="md:text-[18px] text-[16px] tracking-wide text-[#777571] font-sans font-normal">
                   {" "}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Obcaecati laborum porro, magni atque nulla fuga quas
-                  cupiditate quia quae saepe.
+                  Rent us minimum of 30 USDC or in ETH USDT in BTC in for 12 or
+                  24 months, and We,ll pay you up to to{" "}
+                  <span className="text-black font-semibold"> 15% per month </span>
                 </p>
               </div>
 
@@ -75,11 +73,11 @@ const Swipper = () => {
             <div className="">
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold text-slate-900">BNB</h1>
-                <p className="text-[1.1em] text-[#777571] font-sans font-normal">
+                <p className="md:text-[18px] text-[16px] text-[#777571] font-sans font-normal">
                   {" "}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Obcaecati laborum porro, magni atque nulla fuga quas
-                  cupiditate quia quae saepe.
+                  Rent us minimum of 30 USDC or in ETH USDT in BTC in for 12 or
+                  24 months, and We,ll pay you up to to{" "}
+                  <span className="text-black font-semibold"> 15% per month </span>
                 </p>
               </div>
 
@@ -98,11 +96,11 @@ const Swipper = () => {
             <div className="">
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold text-slate-900">Ethereum</h1>
-                <p className="text-[1.1em] text-[#777571] font-sans font-normal">
+                <p className="md:text-[18px] text-[16px] text-[#777571] font-sans font-normal">
                   {" "}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Obcaecati laborum porro, magni atque nulla fuga quas
-                  cupiditate quia quae saepe.
+                  Rent us minimum of 30 USDC or in ETH USDT in BTC in for 12 or
+                  24 months, and We,ll pay you up to to{" "}
+                  <span className="text-black font-semibold"> 15% per month </span>
                 </p>
               </div>
 
@@ -121,11 +119,11 @@ const Swipper = () => {
             <div className="">
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold text-slate-900">Tether</h1>
-                <p className="text-[1.1em] text-[#777571] font-sans font-normal">
+                <p className="md:text-[18px] text-[16px] text-[#777571] font-sans font-normal">
                   {" "}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Obcaecati laborum porro, magni atque nulla fuga quas
-                  cupiditate quia quae saepe.
+                  Rent us minimum of 30 USDC or in ETH USDT in BTC in for 12 or
+                  24 months, and We,ll pay you up to to{" "}
+                  <span className="text-black font-semibold"> 15% per month </span>
                 </p>
               </div>
 

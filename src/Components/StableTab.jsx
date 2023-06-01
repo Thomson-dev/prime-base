@@ -45,11 +45,12 @@ const StableTab = () => {
             <div className="">
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold text-slate-900">USDCoin</h1>
-                <p className="text-[1.1em] text-[#777571] font-sans font-normal">
+                <p className="md:text-[18px] text-[16px] text-[#777571] font-sans font-normal">
                   {" "}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Obcaecati laborum porro, magni atque nulla fuga quas
-                  cupiditate quia quae saepe.
+                  {" "}
+                  Rent us minimum of 30 USDC or in ETH USDT in BTC in for 12 or
+                  24 months, and We,ll pay you up to to{" "}
+                  <span className="text-black font-semibold"> 15% per month </span>
                 </p>
               </div>
 
@@ -68,11 +69,12 @@ const StableTab = () => {
             <div className="">
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold text-slate-900">Tether</h1>
-                <p className="text-[1.1em] text-[#777571] font-sans font-normal">
+                <p className="md:text-[18px] text-[16px] text-[#777571] font-sans font-normal">
                   {" "}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Obcaecati laborum porro, magni atque nulla fuga quas
-                  cupiditate quia quae saepe.
+                  {" "}
+                  Rent us minimum of 30 USDC or in ETH USDT in BTC in for 12 or
+                  24 months, and We,ll pay you up to to{" "}
+                  <span className="text-black font-semibold"> 15% per month </span>
                 </p>
               </div>
 

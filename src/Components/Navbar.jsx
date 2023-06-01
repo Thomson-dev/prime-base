@@ -1,4 +1,4 @@
-import primebase from "../images/primebase.png";
+import Crypto from "../images/crypto.png";
 import icon1 from "../images/icon1.svg";
 import icon2 from "../images/icon2.svg";
 import { useState } from "react";
@@ -8,73 +8,52 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
-    // <nav className="bg-[#1c2120] p-3 px-10 w-full ">
-    //   <div className="">
-    //     <div className="flex  items-center justify-between">
-    //       <div className="flex gap-x-4 items-center">
-    //         <img src={primebase} className="w-[20%]" alt="" />
-    //         <ul className="flex gap-6 clear-left font-semibold text-xl text-white">
-    //           <li>Products</li>
-    //           <li> Prime Blog</li>
-    //         </ul>
-    //       </div>
+   
 
-    //       <ul className="flex items-center  gap-5 ">
-    //         <li className="py-2 px-5 bg-white text-[#1c2120] text-lg font-semibold rounded-3xl">Open Account</li>
-    //         <li className="text-lg text-white font-semibold">Sign In</li>
-    //       </ul>
-    //     </div>
-    //   </div>
-    // </nav>
-
-    <nav className="bg-[#1c2120] px-[1rem] md:px-[3rem] md:pr-[10rem] py-2 md:py-[1rem]">
+    <nav className="bg-[#1c2120] px-[2rem] md:px-[3rem] md:pr-[10rem] py-5 md:py-[1rem]">
       <div className="md:flex hidden w-full justify-between">
         <div className="flex gap-x-4 w-1/2  items-center">
-          <img src={primebase} className="w-[109px]" alt="" />
-          <ul className="flex gap-6 clear-left font-semibold w-full text-xl text-white">
+          <img src={Crypto} className="w-[240px]" alt="" />
+          {/* <ul className="flex gap-6 clear-left font-semibold w-full text-xl text-white">
             <li><a href="#/">Products</a> </li>
             <li><a href="#/">Prime Blog</a> </li>
-          </ul>
+          </ul> */}
         </div>
 
         <div className="flex gap-x-4   items-center">
           <ul className="flex items-center  gap-5 ">
             <button className="py-2 px-5 bg-white text-[#1c2120] text-lg font-semibold rounded-3xl">
-              Open Account
+              <a href="#/">Open Account</a>
             </button>
-            <button className="text-lg text-white font-semibold">Sign In</button>
+            <button className="text-lg text-white font-semibold">
+              {" "}
+              <a href="#/">Sign In</a>
+            </button>
           </ul>
         </div>
       </div>
 
       <div className="flex md:hidden  justify-between items-center space-x-2 w-full ">
+        <div className=" flex items-center w-[30%]  justify-center">
+          <img src={Crypto} className="w-[200px] " alt="" />
+        </div>
+
         <div
           onClick={() => setOpen(!open)}
-          className=" text-white  w-[15%]  md:hidden  text-3xl cursor-pointer "
+          className=" text-white   md:hidden  text-2xl cursor-pointer "
         >
           {open ? <HiX /> : <GiHamburgerMenu />}
         </div>
 
-        <div className=" flex items-center w-[30%]  justify-center">
-          <img src={primebase} className="w-[98px] h-[73px]" alt="" />
-        </div>
-
-        <div className=" flex items-center w-[35%]  justify-center ">
-          <a
-            href="/#"
-            className="py-2  px-6 rounded-2xl font-semibold text-lg bg-white"
-          >
-            Sign up
-          </a>
-        </div>
-
-        <ul className={`absolute md:hidden top-[7rem] px-7 space-y-3 text-lg font-normal left-[-0.5rem] z-10 text-white bg-[#1c2120]  py-4 w-full
-        ${open ? 'left-[-0.5rem] duration-300 ' : 'left-[-110%] duration-300'}
+        <ul
+          className={`absolute md:hidden top-[5.5rem] px-7 space-y-3 text-lg font-normal left-[-0.5rem] z-10 text-white bg-[#1c2120]  py-4 w-full
+        ${open ? "left-[-0.5rem] duration-300 " : "left-[-110%] duration-300"}
         
-        `}>
-            <li>Products</li>
-            <li> Prime Blog</li>
-          </ul>
+        `}
+        >
+          <li><a href="#/">Open Account </a> </li>
+          <li> <a href="#/">Sign In</a></li>
+        </ul>
       </div>
     </nav>
   );

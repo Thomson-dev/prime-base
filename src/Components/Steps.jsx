@@ -18,11 +18,11 @@ const Steps = () => {
   return (
     <div className="bg-[#f9f3eb] ">
       <div className="lg:px-[4rem] md:px-[2rem] px-[1rem] md:py-[5rem] py-2 ">
-        <h1 className=" md:text-[2.6rem]  text-[1.6rem] font-semibold text-[#151515]">
+        <h1 className=" md:text-[2.6rem]  text-[20px] font-semibold text-[#151515]">
           How to earn with Crypto
         </h1>
 
-        <p className="lg:text-[1.5rem] md:text-[1.4rem]  text-[1.2rem] tracking-wide md:py-2 py-1 font-semibold text-[#7a7a8c]">
+        <p className=" md:text-[1.4rem]  text-[17px] tracking-wide md:py-2 py-1 font-semibold text-[#7a7a8c]">
           Earn monthly returns with one of our Crypto Renting programs
         </p>
         {/* <h1 className="text-red-500 sm:text-green-500 md:text-black lg:text-orange-600 ">
@@ -48,7 +48,7 @@ const Steps = () => {
             <div data-aos ="fade-up" className="md:flex flex-col md:space-x-12 space-x-4  sm:pl-[10rem]  pl-1 md:pl-0   md:flex-row items-center">
               <img src={percentage} alt="" />
               <div className="">
-                <h1 className="md:text-3xl sm:text-2xl text-xl font-semibold font-sans">
+                <h1 className="md:text-3xl text-xl font-semibold font-sans">
                   Choose your renting program
                 </h1>
                 <p className="md:text-[19px] sm:text-[19px] text-[18px] md:pt-2 pt-1 font-sans font100 max-w-sm md:leading-8 tracking-wide text-[#7a7a8c]  ">
