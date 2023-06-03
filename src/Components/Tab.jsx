@@ -22,7 +22,7 @@ const Tab = () => {
   const [value2, setValue2] = useState("0.0025");
 
   const [rangeValue, setRangeValue] = useState(12);
- 
+
   const [rangeValue2, setRangeValue2] = useState(12);
 
   const toggleTab = (index) => {
@@ -85,14 +85,14 @@ const Tab = () => {
   const [selectedItem2, setSelectedItem2] = useState(data2[0]); // Set the first object as the default selected item
   const [activeItemId, setActiveItemId] = useState([]);
   const [activeItemId2, setActiveItemId2] = useState([]);
-  const [activeColor, setActiveColor] = useState([])
+  const [activeColor, setActiveColor] = useState([]);
 
   const handleClick = (item, fasle) => {
     setSelectedItem(item);
     setdropdownOpen(fasle);
     setdropdownOpen2(fasle);
     setActiveItemId(item.id);
-    setActiveColor(item.id)
+    setActiveColor(item.id);
   };
 
   const handleRangeChange2 = (event) => {
@@ -104,7 +104,7 @@ const Tab = () => {
     setdropdownOpen(fasle);
     setdropdownOpen2(fasle);
     setActiveItemId2(item.id);
-    setActiveColor(item.id)
+    setActiveColor(item.id);
   };
 
   useEffect(() => {
@@ -151,7 +151,7 @@ const Tab = () => {
           onClick={() => toggleTab(1)}
           className={`${
             toggleState === 1
-              ? "py-3 px-4 bg-[#fefcf9]  font-semibold text-xl shadow-sm  text-[#7907f8]   rounded-t-xl "
+              ? "py-3 px-4 bg-[#fefcf9]  font-semibold text-xl shadow-sm  text-[#21a03d]   rounded-t-xl "
               : " py-5 px-6 text-xl"
           }`}
         >
@@ -161,7 +161,7 @@ const Tab = () => {
           onClick={() => toggleTab(2)}
           className={`${
             toggleState === 2
-              ? "py-5 px-6 bg-[#fefcf9]  font-semibold text-xl shadow-sm   text-[#7907f8]   rounded-t-xl "
+              ? "py-5 px-6 bg-[#fefcf9]  font-semibold text-xl shadow-sm   text-[#21a03d]   rounded-t-xl "
               : " py-5 px-7 text-xl"
           }`}
         >
@@ -174,7 +174,7 @@ const Tab = () => {
           onClick={() => toggleTab(1)}
           className={`${
             toggleState === 1
-              ? "py-3 px-8 bg-[#7907f8]  font-semibold text-[17px] shadow-lg  text-white   rounded-md "
+              ? "py-3 px-8 bg-[#21a03d]  font-semibold text-[17px] shadow-lg  text-white   rounded-md "
               : " py-5 px-6 text-xl"
           }`}
         >
@@ -184,7 +184,7 @@ const Tab = () => {
           onClick={() => toggleTab(2)}
           className={`${
             toggleState === 2
-              ? "py-3 px-8 bg-[#7907f8]  font-semibold text-[17px] shadow-lg  text-white   rounded-md "
+              ? "py-3 px-8 bg-[#21a03d]  font-semibold text-[17px] shadow-lg  text-white   rounded-md "
               : " py-5 px-7 text-xl"
           }`}
         >
@@ -203,7 +203,7 @@ const Tab = () => {
               <div
                 key={item.id}
                 className={`border cursor-pointer rounded-lg py-2 px-3 flex justify-between w-[100%] ${
-                  activeItemId === item.id ? "bg-[#7907f8]" : "bg-[#ddf2e7] "
+                  activeItemId === item.id ? "bg-[#21a03d]" : "bg-[#ddf2e7] "
                 }   `}
                 onClick={() => handleClick(item)}
               >
@@ -211,9 +211,7 @@ const Tab = () => {
                   <div>
                     <h1
                       className={`text-2xl font-bold text-black  ${
-                        activeItemId === item.id
-                          ? "text-white"
-                          : "text-black"
+                        activeItemId === item.id ? "text-white" : "text-black"
                       }`}
                     >
                       {item.percent}
@@ -284,7 +282,7 @@ const Tab = () => {
             </div>
 
             <div
-              className={`absolute  md:h-[150px] w-[97%] sm:left-3  h-[155px] rounded-md border border-[#7907f8] top-[5rem] sm:top-[5.6rem] md:top-[6rem] z-20   bg-slate-50 md:w-[280px]  ${
+              className={`absolute  md:h-[150px] w-[97%] sm:left-3  h-[155px] rounded-md border border-[#21a03d] top-[5rem] sm:top-[5.6rem] md:top-[6rem] z-20   bg-slate-50 md:w-[280px]  ${
                 dropdownOpen
                   ? `top-full opacity-100 visible`
                   : `top-[110%] invisible opacity-0`
@@ -299,7 +297,6 @@ const Tab = () => {
                         onClick={() => handleClick(item, false)}
                         className={`flex items-center hover:rounded-md  py-[9px] hover:bg-[#DDF2E7] px-5  cursor-pointer space-x-3  ${
                           activeColor === item.id ? "bg-[#DDF2E7]  " : " "
-                           
                         } `}
                       >
                         <img src={item.image} className="w-[46px]" alt="" />
@@ -346,7 +343,7 @@ const Tab = () => {
             </div>
 
             <div className=" w-1/2 relative  ">
-              <button className="bg-[#7907f8] justify-end mx-auto relative top-6  sm:hidden block hover:bg-green-600 text-white rounded-md py-3 border px-4 font-semibold ">
+              <button className="bg-[#21a03d] justify-end mx-auto relative top-6  sm:hidden block hover:bg-green-600 text-white rounded-md py-3 border px-4 font-semibold ">
                 Start Renting
               </button>
               <div className=" sm:flex hidden  justify-end pt-[2rem] items-center space-x-2">
@@ -369,7 +366,7 @@ const Tab = () => {
               </div>
 
               <div
-                className={`md:absolute flex   h-[155px] rounded-md border border-[#7907f8] z-20  top-[4rem] left-[-3rem] bg-slate-50 md:w-[280px]  ${
+                className={`md:absolute flex   h-[155px] rounded-md border border-[#21a03d] z-20  top-[4rem] left-[-3rem] bg-slate-50 md:w-[280px]  ${
                   dropdownOpen2
                     ? `top-full opacity-100 visible`
                     : `top-[110%] invisible opacity-0`
@@ -384,7 +381,6 @@ const Tab = () => {
                           onClick={() => handleClick(item, false)}
                           className={`flex items-center hover:rounded-md w-[] py-[9px] hover:bg-[#DDF2E7] px-5  cursor-pointer space-x-3   ${
                             activeColor === item.id ? "bg-[#DDF2E7]  " : " "
-                             
                           } `}
                         >
                           <img src={item.image} className="w-[46px]" alt="" />
@@ -417,32 +413,32 @@ const Tab = () => {
                 key={item2.id}
                 onClick={() => handleClick2(item2, false)}
                 className={`border cursor-pointer rounded-lg  py-2 px-3 flex justify-between w-[100%]  ${
-                  activeItemId2 === item2.id ? "bg-[#7907f8]" : "bg-[#ddf2e7] "
+                  activeItemId2 === item2.id ? "bg-[#21a03d]" : "bg-[#ddf2e7] "
                 }   `}
               >
                 <div className=" space-y-4">
                   <div>
-                    <h1 className={`text-2xl font-bold text-[#343434]  ${
-                        activeItemId2 === item2.id
-                          ? "text-white"
-                          : "text-black"
-                      }`}>
+                    <h1
+                      className={`text-2xl font-bold text-[#343434]  ${
+                        activeItemId2 === item2.id ? "text-white" : "text-black"
+                      }`}
+                    >
                       {item2.percent}
                     </h1>
-                    <p className={`text-slate-700 text-[14px]  ${
-                        activeItemId2 === item2.id
-                          ? "text-white"
-                          : "text-black"
-                      } `}>
+                    <p
+                      className={`text-slate-700 text-[14px]  ${
+                        activeItemId2 === item2.id ? "text-white" : "text-black"
+                      } `}
+                    >
                       {item2.month}
                     </p>
                   </div>
 
-                  <h1 className={`text-xl font-semibold text-black ${
-                        activeItemId2 === item2.id
-                          ? "text-white"
-                          : "text-black"
-                      }  `}>
+                  <h1
+                    className={`text-xl font-semibold text-black ${
+                      activeItemId2 === item2.id ? "text-white" : "text-black"
+                    }  `}
+                  >
                     {item2.title}
                   </h1>
                 </div>
@@ -497,7 +493,7 @@ const Tab = () => {
             </div>
 
             <div
-              className={`absolute  md:h-[210px]  w-[97%] sm:left-3  h-[210px] rounded-md border border-[#7907f8] top-[6rem] z-20   bg-slate-50 md:w-[280px]  ${
+              className={`absolute  md:h-[210px]  w-[97%] sm:left-3  h-[210px] rounded-md border border-[#21a03d] top-[6rem] z-20   bg-slate-50 md:w-[280px]  ${
                 dropdownOpen
                   ? `top-full opacity-100 visible`
                   : `top-[110%] invisible opacity-0`
@@ -512,7 +508,6 @@ const Tab = () => {
                         onClick={() => handleClick2(item2, false)}
                         className={`flex items-center hover:rounded-md  py-[9px] hover:bg-[#DDF2E7] px-5  cursor-pointer space-x-3 ${
                           activeColor === item2.id ? "bg-[#DDF2E7]  " : " "
-                           
                         } `}
                       >
                         <img src={item2.image} className="w-[46px]" alt="" />
@@ -562,7 +557,7 @@ const Tab = () => {
             </div>
 
             <div className=" w-1/2 relative  ">
-              <button className="bg-[#7907f8] justify-end mx-auto relative top-6  sm:hidden block hover:bg-[#7d49b9] text-white rounded-md py-3 border px-4 font-semibold ">
+              <button className="bg-[#21a03d] justify-end mx-auto relative top-6  sm:hidden block hover:bg-[#1d4626] text-white rounded-md py-3 border px-4 font-semibold ">
                 Start Renting
               </button>
               <div className=" sm:flex hidden  justify-end pt-[2rem] items-center space-x-2">
@@ -585,7 +580,7 @@ const Tab = () => {
               </div>
 
               <div
-                className={`md:absolute flex   h-[210px] rounded-md border border-[#7907f8]  z-20  top-[4rem] left-[-3rem] bg-slate-50 md:w-[280px]  ${
+                className={`md:absolute flex   h-[210px] rounded-md border border-[#21a03d]  z-20  top-[4rem] left-[-3rem] bg-slate-50 md:w-[280px]  ${
                   dropdownOpen2
                     ? `top-full opacity-100 visible`
                     : `top-[110%] invisible opacity-0`
@@ -600,7 +595,6 @@ const Tab = () => {
                           onClick={() => handleClick2(item2, false)}
                           className={`flex items-center hover:rounded-md w-[] py-[9px] hover:bg-[#DDF2E7] px-5  cursor-pointer space-x-3  ${
                             activeColor === item2.id ? "bg-[#DDF2E7]  " : " "
-                             
                           } `}
                         >
                           <img src={item2.image} className="w-[46px]" alt="" />

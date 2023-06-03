@@ -37,7 +37,7 @@ const Hero = () => {
           <div>
             <p className="  font-bold sm:leading-[60px] leading-[40px] font-sans  sm:text-[48px]  text-[32px] sm:max-w-[500px]">
               Rent us your Crypto, earn up to{" "}
-              <span className="text-[#7907f8]">40% interest</span>
+              <span className="text-[#21a03d]">40% interest</span>
             </p>
           </div>
 
@@ -48,7 +48,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <button className="bg-[#7907f8] hidden sm:block hover:bg-[#612e9c] text-white rounded-md px-16 text-xl font-semibold py-3">
+          <button className="bg-[#21a03d] hidden sm:block hover:bg-[#2f6e3d] text-white rounded-md px-16 text-xl font-semibold py-3">
             Start Renting
           </button>
         </div>

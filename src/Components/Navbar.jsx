@@ -1,4 +1,4 @@
-import Crypto from "../images/crypto.png";
+import Crypto from "../images/primebase.png";
 import icon1 from "../images/icon1.svg";
 import icon2 from "../images/icon2.svg";
 import { useState } from "react";
@@ -10,10 +10,10 @@ const Navbar = () => {
   return (
    
 
-    <nav className="bg-[#1c2120] px-[2rem] md:px-[3rem] md:pr-[10rem] py-5 md:py-[1rem]">
+    <nav className="bg-[#1c2120] px-[2rem] md:px-[3rem] md:pr-[10rem] py-2 md:py-[1rem]">
       <div className="md:flex hidden w-full justify-between">
         <div className="flex gap-x-4 w-1/2  items-center">
-          <img src={Crypto} className="w-[240px]" alt="" />
+          <img src={Crypto} className="w-[120px]" alt="" />
           {/* <ul className="flex gap-6 clear-left font-semibold w-full text-xl text-white">
             <li><a href="#/">Products</a> </li>
             <li><a href="#/">Prime Blog</a> </li>
@@ -35,7 +35,7 @@ const Navbar = () => {
 
       <div className="flex md:hidden  justify-between items-center space-x-2 w-full ">
         <div className=" flex items-center w-[30%]  justify-center">
-          <img src={Crypto} className="w-[200px] " alt="" />
+          <img src={Crypto} className="w-[100px] " alt="" />
         </div>
 
         <div
@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
 
         <ul
-          className={`absolute md:hidden top-[5.5rem] px-7 space-y-3 text-lg font-normal left-[-0.5rem] z-10 text-white bg-[#1c2120]  py-4 w-full
+          className={`absolute md:hidden top-[7rem] px-7 space-y-3 text-lg font-normal left-[-0.5rem] z-10 text-white bg-[#1c2120]  py-4 w-full
         ${open ? "left-[-0.5rem] duration-300 " : "left-[-110%] duration-300"}
         
         `}
