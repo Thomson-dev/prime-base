@@ -338,7 +338,7 @@ const Tab = () => {
               <h1 className="font-semibold text-[12px]">TOTAL EARNINGS</h1>
               <div className="flex items-center space-x-2 w-[100%]">
                 <img src={selectedItem.image} alt="" className="max-w-[18px]" />
-                <h1 className="text-4xl font-bold">{result}</h1>
+                <h1 className="md:text-[25px] text-[22px] font-bold">{result}</h1>
               </div>
             </div>
 
@@ -552,12 +552,12 @@ const Tab = () => {
                   alt=""
                   className="max-w-[18px]"
                 />
-                <h1 className="text-4xl font-bold">{result2}</h1>
+                <h1 className="md:text-[25px] text-[22px] font-bold">{result2}</h1>
               </div>
             </div>
 
             <div className=" w-1/2 relative  ">
-              <button className="bg-[#21a03d] justify-end mx-auto relative top-6  sm:hidden block hover:bg-[#1d4626] text-white rounded-md py-3 border px-4 font-semibold ">
+              <button className="bg-[#0e100e] justify-end mx-auto relative top-6  sm:hidden block hover:bg-[#1d4626] text-white rounded-md py-3 border px-4 font-semibold ">
                 Start Renting
               </button>
               <div className=" sm:flex hidden  justify-end pt-[2rem] items-center space-x-2">
