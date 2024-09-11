@@ -10,8 +10,8 @@ const Navbar = () => {
   return (
    
 
-    <nav className="bg-[#1c2120] px-[2rem] md:px-[3rem] md:pr-[10rem] py-2 md:py-[1rem]">
-      <div className="md:flex hidden w-full justify-between">
+    <nav className="bg-[#1c2120] py-2 md:py-[1rem]">
+      <div className="md:flex hidden max-w-[1550px] w-[95%] mx-auto  justify-between">
         <div className="flex gap-x-4 w-1/2  items-center">
           <img src={Crypto} className="w-[120px]" alt="" />
           {/* <ul className="flex gap-6 clear-left font-semibold w-full text-xl text-white">
@@ -33,7 +33,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex md:hidden  justify-between items-center space-x-2 w-full ">
+      <div className="flex md:hidden px-3  justify-between items-center space-x-2 w-full ">
         <div className=" flex items-center w-[30%]  justify-center">
           <img src={Crypto} className="w-[100px] " alt="" />
         </div>

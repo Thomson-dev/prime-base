@@ -20,7 +20,7 @@ import "swiper/css/effect-fade";
 
 const CryptoTab = () => {
   return (
-    <div className="">
+    <div className="max-w-[1550px] w-[95%] mx-auto">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}

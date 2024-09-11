@@ -7,7 +7,7 @@ import faq from "../images/faq.webp";
 const Faq = () => {
   return (
     <div className="bg-[#f9f3eb]">
-      <div className="lg:px-[4rem] md:px-[2rem] px-[1rem] py-[6rem] md:flex">
+      <div className="max-w-[1550px] w-[95%] mx-auto py-[6rem] md:flex">
         <div className="md:w-[60%]">
           <div className=" space-y-8">
             <h1 className="text-4xl font-bold font-sans">FAQ</h1>

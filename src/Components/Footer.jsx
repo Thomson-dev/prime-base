@@ -9,7 +9,7 @@ import google from "../images/play-market-white.96aad589b6058e11ff44d906ba3b7e20
 const Footer = () => {
   return (
     <div className="bg-[#000]">
-      <div className="md:px-[3rem] px-[1rem] py-[7rem] w-full space-y-20  flex md:flex-row flex-col">
+      <div className="max-w-[1550px] w-[95%] mx-auto py-[7rem] l space-y-20  flex md:flex-row flex-col">
         <div className="md:w-[40%]  flex  ">
           <div className="space-y-7 ">
             <img src={primbase} alt="" className="md:w-[163px] w-[123px] h-[94px] md:h-[125px]" />

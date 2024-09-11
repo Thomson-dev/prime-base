@@ -32,7 +32,7 @@ const data = [
 const Hero = () => {
   return (
     <div className="bg-[#f9f3eb] pb-[5rem] ">
-      <div className="md:px-[2rem] lg:px-[4rem] px-4 md:py-[3rem] py-[1rem] md:flex justify-between">
+      <div className=" max-w-[1550px] w-[95%] mx-auto  md:py-[3rem] py-[1rem] md:flex justify-between">
         <div className="space-y-5 ">
           <div>
             <p className="  font-bold sm:leading-[60px] leading-[40px] font-sans  sm:text-[48px]  text-[32px] sm:max-w-[500px]">
